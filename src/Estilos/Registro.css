@@ -1,0 +1,79 @@
+/* Estilo para un registo */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../imagenes/Img_inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Ajusta la opacidad aquí */
+  }
+
+/* Para centrar el contenido */
+.content {
+    position: relative;
+    z-index: 1; /* Para que el contenido esté por encima del fondo */
+    color: white; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    font-family: Arial, sans-serif; /* Fuente */
+  }
+
+/* boton de registro */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 10px; /* Margen */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    
+    position: relative;
+    top: -25px;
+  }
+
+.input-field {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+
+    position: relative;
+    top: -65px;
+  }
+  
+.input-field::placeholder {
+    text-align: center;
+    color: gray;
+  }
+
+.title {
+    font-size: 3em;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #311bad;
+  }
+
+.label {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #311bad;
+
+    position: relative;
+    top: -40px;
+  }
