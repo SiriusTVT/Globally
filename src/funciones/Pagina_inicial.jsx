@@ -13,6 +13,11 @@ function HomePage () {
         console.log('click');
     }
 
+    function handleClick1() {
+        navigate('/inicio_sesion');
+        console.log('click');
+    }
+
     return (
         
         <div>
@@ -23,7 +28,7 @@ function HomePage () {
                     <div>
                         <h1 className='title'>Globally</h1>
                         <div>
-                            <button className='button1'>
+                            <button className='button1' onClick={handleClick1}>
                                 Iniciar Sesión
                             </button>
                             <button className='button2' onClick={handleClick2}>
