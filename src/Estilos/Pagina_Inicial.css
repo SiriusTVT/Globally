@@ -22,8 +22,6 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Ajusta la opacidad aquí */
   }
   
-
-/* Para centrar el contenido */
 .content {
     position: relative;
     z-index: 1;

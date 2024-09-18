@@ -3,8 +3,11 @@ import '../Estilos/Pagina_principal.css' // Asegúrate de importar el archivo CS
 
 function Pagina_principal() {
     return (
-      <div className='rectangle'>
-        <h1 className='title'>Chat</h1>
+      <div>
+        <div className='background-overlay'></div>
+        <div className='rectangle1'>
+          <h1 className='title4'>Chat</h1>
+        </div>
       </div>
     )
 }
