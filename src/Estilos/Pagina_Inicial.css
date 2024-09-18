@@ -35,28 +35,6 @@ body {
     font-family: Arial, sans-serif; /* Fuente */
   }
 
-/* Para el botón Inicio sesion*/
-/* .button1 {
-    display: inline-block;
-    padding: 10px 20px; 
-    margin: 10px;
-    background-color: #622d83;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-} */
-
-/* Para el botón Registrarse*/
-/* .button2 {
-    display: inline-block;
-    padding: 10px 20px; 
-    margin: 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  } */
-
 /* para el titulo con diseno la letras */
 .title {
     font-size: 3em;
