@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import '../Estilos/Pagina_inicial.css';
+import '../Estilos/Botones.css';
 
 
 function HomePage () {
@@ -28,10 +29,10 @@ function HomePage () {
                     <div>
                         <h1 className='title'>Globally</h1>
                         <div>
-                            <button className='button1' onClick={handleClick1}>
+                            <button className='boton-inicio-sesion' onClick={handleClick1}>
                                 Iniciar Sesión
                             </button>
-                            <button className='button2' onClick={handleClick2}>
+                            <button className='boton-registro' onClick={handleClick2}>
                                 Registrarse
                             </button>
                         </div>

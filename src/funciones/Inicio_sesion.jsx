@@ -1,11 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import '../Estilos/Inicio_sesion.css';
+import '../Estilos/Botones.css';
 
+// Función que representa la página de inicio de sesión
 function Inicio_sesion() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
 
+    // Manejar el cambio en los campos del formulario
     const handleInputChange = (event) => {
         setFormData({
             ...formData,
@@ -13,10 +19,17 @@ function Inicio_sesion() {
         });
     };
 
+    // Manejar el evento de submit del formulario
     const handleSubmit = (event) => {
         event.preventDefault();
         // Aquí puedes hacer lo que necesites con los datos del formulario
         console.log(formData);
+    };
+
+    // Manejar el evento de click en el botón de regresar
+    const handleBack = () => {
+        navigate('/');
+        console.log('Botón de regresar presionado');
     };
 
     return (
@@ -52,7 +65,8 @@ function Inicio_sesion() {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button className='button' type='submit'>Iniciar Sesión</button>
+                    <button className='boton-inicio-sesion' type='submit'>Iniciar Sesión</button>
+                    <button className='boton-regresar' type='button' onClick={handleBack}>Regresar</button>
                 </form>
             </div>
         </div>

@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import '../Estilos/Registro.css';
+import '../Estilos/Botones.css';
 
 function Registro() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -9,6 +12,7 @@ function Registro() {
     confirmPassword: ''
   });
 
+  // Manejar el cambio en los campos del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -17,9 +21,16 @@ function Registro() {
     }));
   };
 
+  // Manejar el evento de submit del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Datos del formulario:', formData);
+  };
+
+  // Manejar el evento de click en el botón de regresar
+  const handleBack = () => {
+    navigate('/');
+    console.log('Botón de regresar presionado');
   };
 
   return (
@@ -81,9 +92,16 @@ function Registro() {
               className='input-field'
             />
           </div>
-          <button type="submit" className='button'>
-            Registrarse
-          </button>
+          <div>
+            <button className='boton-registro'>
+              Registrarse
+            </button>
+
+            <button className='boton-regresar' type='submit' onClick={handleBack}>
+              X
+            </button>
+          </div>
+
         </form>
       </div>
     </div>

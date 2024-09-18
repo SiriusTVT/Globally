@@ -34,20 +34,6 @@ body {
     font-family: Arial, sans-serif; /* Fuente */
   }
 
-/* boton de registro */
-.button {
-    display: inline-block;
-    padding: 10px 20px; /* Espaciado interno */
-    margin: 10px; /* Margen */
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    text-decoration: none; /* Quitar subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    
-    position: relative;
-    top: -25px;
-  }
-
 .input-field {
     width: 300px;
     padding: 10px;
