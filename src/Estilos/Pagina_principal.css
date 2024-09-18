@@ -1,0 +1,16 @@
+.rectangle {
+  width: 700px;
+  height: 800px;
+  border: 2px solid rgb(245, 243, 243);
+  margin-top: 20px;
+  background-color: #f0f0f0; /* Añade el color de fondo que desees */
+}
+
+.title {
+  font-size: 3em;
+  font-family: 'Arial', sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}

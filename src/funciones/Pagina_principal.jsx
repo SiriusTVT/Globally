@@ -1,15 +1,12 @@
 import React from 'react'
+import '../Estilos/Pagina_principal.css' // Asegúrate de importar el archivo CSS
 
 function Pagina_principal() {
     return (
-      <div className="chat-box">
-        <div className="messages">
-          {/* Messages will be displayed here */}
-        </div>
-        <input type="text" placeholder="Type a message..." />
-        <button>Send</button>
+      <div className='rectangle'>
+        <h1 className='title'>Chat</h1>
       </div>
     )
-  }
-  
+}
+
 export default Pagina_principal
