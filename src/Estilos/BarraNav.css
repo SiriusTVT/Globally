@@ -1,0 +1,27 @@
+.barranav {
+    background-color: #65a8c3;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+.barranav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.barranav li {
+    padding: 40px 20px;
+    display: inline;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.barranav li:hover {
+    background-color: #0866ca;
+}
+  
