@@ -26,19 +26,9 @@ body {
 /* Para centrar el contenido */
 .content {
     position: relative;
-    z-index: 1; /* Para que el contenido esté por encima del fondo */
-    color: white; /* Color del texto */
-    text-align: center; /* Alineación del texto */
-    padding: 20px; /* Espaciado interno */
-
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
     font-size: 2em;
-    font-family: Arial, sans-serif; /* Fuente */
-  }
-
-/* para el titulo con diseno la letras */
-.title {
-    font-size: 3em;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
+    font-family: Arial, sans-serif;
   }

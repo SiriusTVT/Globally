@@ -25,13 +25,11 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Ajusta la opacidad aquí */
   }
 
-/* Para centrar el contenido */
 .content {
     position: relative;
-    z-index: 1; /* Para que el contenido esté por encima del fondo */
-    color: white; /* Color del texto */
-    text-align: center; /* Alineación del texto */
-    font-family: Arial, sans-serif; /* Fuente */
+    z-index: 1;
+    text-align: center;
+    font-family: Arial, sans-serif;
   }
 
 .input-field {
@@ -48,17 +46,10 @@ body {
     color: gray;
   }
 
-.title {
-    font-size: 3em;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    text-shadow: 2px 2px 4px #311bad;
-  }
-
 .label {
     font-family: 'Arial', sans-serif;
     color: white;
-    text-shadow: 2px 2px 4px #311bad;
+    text-shadow: 2px 2px 4px #194060;
 
     position: relative;
     top: -40px;
