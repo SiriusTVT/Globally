@@ -21,9 +21,9 @@ function Inicio_sesion() {
 
     // Manejar el evento de submit del formulario
     const handleSubmit = (event) => {
-        event.preventDefault();
-        // Aquí puedes hacer lo que necesites con los datos del formulario
-        console.log(formData);
+        event.preventDefault(); // Evitar que el formulario recargue la página
+        navigate('/pagina_principal');
+        console.log(formData); // Imprimir los datos del formulario
     };
 
     // Manejar el evento de click en el botón de regresar
@@ -31,11 +31,6 @@ function Inicio_sesion() {
         navigate('/');
         console.log('Botón de regresar presionado');
     };
-
-    function handleClick() {
-        navigate('/pagina_principal');
-        console.log('click');
-    }
 
     return (
         <div>
@@ -70,7 +65,7 @@ function Inicio_sesion() {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button className='boton-inicio-sesion' type='submit' onClick={handleClick}>Iniciar Sesión </button>
+                    <button className='boton-inicio-sesion' type='submit'>Iniciar Sesión </button>
                     <button className='boton-regresar' type='button' onClick={handleBack}>Regresar</button>
                 </form>
             </div>

@@ -24,7 +24,7 @@ function Registro() {
   // Manejar el evento de submit del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Datos del formulario:', formData);
+    console.log('Datos del formulario:', formData); // Imprimir los datos del formulario
   };
 
   // Manejar el evento de click en el botón de regresar
@@ -93,7 +93,7 @@ function Registro() {
             />
           </div>
           <div>
-            <button className='boton-registro'>
+            <button className='boton-registro' type='submit'>
               Registrarse
             </button>
 
