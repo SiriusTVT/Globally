@@ -32,3 +32,13 @@ body {
     font-size: 2em;
     font-family: Arial, sans-serif;
   }
+
+.title1{
+  color: turquoise;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.paragraph1{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
