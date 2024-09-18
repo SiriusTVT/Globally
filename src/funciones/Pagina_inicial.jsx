@@ -28,7 +28,7 @@ function HomePage () {
             <div className="content">
                 <header>
                     <div>
-                        <h1 className='title'>Globally</h1>
+                        <h1 className="title1">Globally</h1>
                         <div>
                             <button className='boton-inicio-sesion' onClick={handleClick1}>
                                 Iniciar Sesión
@@ -41,10 +41,10 @@ function HomePage () {
                 </header>
                 <main>
                     <div>
-                        <h2>
+                        <h2 className="paragraph1">
                             Conecta al mundo, sin barreras lingüística.
                         </h2>
-                        <p>
+                        <p className="paragraph1">
                             Conéctate con amigos y comparte tus momentos especiales.
                         </p>
                     </div>

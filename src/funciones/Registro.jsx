@@ -38,7 +38,7 @@ function Registro() {
       <div className="background-overlay"></div>
 
       <div className="content">
-        <h1 className='title'>Registro</h1>
+        <h1 className='title2'>Registro</h1>
         <form onSubmit={handleSubmit}>
           <div>
             <p className='label'>Nombre: </p>

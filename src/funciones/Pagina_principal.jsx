@@ -4,7 +4,7 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import React from 'react'
-import '../Estilos/Pagina_principal.css';
+import '../Estilos/Pagina_principal.css' // Asegúrate de importar el archivo CSS
 
 function Pagina_principal () {
   const [activePage, setActivePage] = useState('home');

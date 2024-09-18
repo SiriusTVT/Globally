@@ -37,7 +37,7 @@ function Inicio_sesion() {
             <div className="background-overlay"></div>
 
             <div className="content">
-                <h1 className='title'>Inicio de Sesión</h1>
+                <h1 className='title3'>Inicio de Sesión</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <p className='label'>Email: </p>
