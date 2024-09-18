@@ -29,7 +29,12 @@ body {
     position: relative;
     z-index: 1;
     text-align: center;
-    font-family: Arial, sans-serif;
+  }
+
+.title2{
+    color: bisque;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
   }
 
 .input-field {
@@ -49,7 +54,7 @@ body {
 .label {
     font-family: 'Arial', sans-serif;
     color: white;
-    text-shadow: 2px 2px 4px #194060;
+    font-weight: bold;
 
     position: relative;
     top: -40px;
