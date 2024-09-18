@@ -1,14 +1,13 @@
 import React from 'react'
+import '../Estilos/Pagina_principal.css';
 
 function Pagina_principal() {
     return (
-      <div className="chat-box">
-        <div className="messages">
-          {/* Messages will be displayed here */}
+        <div className="background-overlay2">
+            <div>
+                
+            </div>
         </div>
-        <input type="text" placeholder="Type a message..." />
-        <button>Send</button>
-      </div>
     )
   }
   
