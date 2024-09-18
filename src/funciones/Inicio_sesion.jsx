@@ -32,6 +32,11 @@ function Inicio_sesion() {
         console.log('Botón de regresar presionado');
     };
 
+    function handleClick() {
+        navigate('/pagina_principal');
+        console.log('click');
+    }
+
     return (
         <div>
             <div className="background-overlay"></div>
@@ -65,7 +70,7 @@ function Inicio_sesion() {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button className='boton-inicio-sesion' type='submit'>Iniciar Sesión</button>
+                    <button className='boton-inicio-sesion' type='submit' onClick={handleClick}>Iniciar Sesión </button>
                     <button className='boton-regresar' type='button' onClick={handleBack}>Regresar</button>
                 </form>
             </div>
