@@ -97,7 +97,7 @@ function Registro() {
               Registrarse
             </button>
 
-            <button className='boton-regresar' type='submit' onClick={handleBack}>
+            <button className='boton-regresar' type='button' onClick={handleBack}>
               X
             </button>
           </div>
