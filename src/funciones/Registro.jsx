@@ -17,14 +17,14 @@ function Registro() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
-      ...prevState,
-      [name]: value
+      ...prevState, // Mantener los valores anteriores
+      [name]: value // Actualizar el valor del campo que cambió
     }));
   };
 
   // Manejar el evento de submit del formulario
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
     // Validar que las contraseñas coincidan
     if (formData.password !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
