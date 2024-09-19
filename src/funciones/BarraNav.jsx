@@ -12,9 +12,9 @@ const BarraNav = ({ setActivePage }) => {
   return (
     <nav className="barranav">
       <ul>
-        <li onClick={() => setActivePage('home')}>Home</li>
-        <li onClick={() => setActivePage('about')}>About</li>
-        <li onClick={() => setActivePage('contact')}>Contact</li>
+        <li onClick={() => setActivePage('Explorar')}>Explorar</li>
+        <li onClick={() => setActivePage('Contactos')}>Contactos</li>
+        <li onClick={() => setActivePage('Chats')}>Chats</li>
       </ul>
       <ul className="navbar-right">
         <li onClick={handleLogout}>Cerrar sesión</li>

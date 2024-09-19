@@ -1,24 +1,24 @@
 import { useState } from "react";
 import BarraNav from './BarraNav';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import Contactos from './Contactos';
+import Chats from './Chats';
+import Explorar from './Explorar';
 import React from 'react'
-import '../Estilos/Pagina_principal.css' // Asegúrate de importar el archivo CSS
+import '../Estilos/Pagina_principal.css' 
 
 function Pagina_principal () {
-  const [activePage, setActivePage] = useState('home');
+  const [activePage, setActivePage] = useState('Explorar');
 
   const renderPage = () => {
     switch (activePage) {
-      case 'home':
-        return <Home />;
-      case 'about':
-        return <About />;
-      case 'contact':
-        return <Contact />;
+      case 'Explorar':
+        return <Explorar />;
+      case 'Contactos':
+        return <Contactos />;
+      case 'Chats':
+        return <Chats />;
       default:
-        return <Home />;
+        return <Explorar />;
     }
   };
 
