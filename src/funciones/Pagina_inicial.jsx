@@ -42,7 +42,7 @@ function HomePage () {
                 <main>
                     <div>
                         <h2 className="paragraph1">
-                            Conecta al mundo, sin barreras lingüística.
+                            Conecta al mundo, sin barreras lingüísticas.
                         </h2>
                         <p className="paragraph1">
                             Conéctate con amigos y comparte tus momentos especiales.
