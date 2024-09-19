@@ -49,9 +49,8 @@ function HomePage () {
                         <h2 className="paragraph1">
                             Conecta al mundo, sin barreras lingüísticas.
                         </h2>
-                        <p className="paragraph1">
-                            Conéctate con amigos y comparte tus momentos especiales.
-                        </p>
+                        <p className="paragraph1">Chats traducidos instantáneamente</p> 
+                        <p className="paragraph1">Conoce personas de todo el mundo</p>
                     </div>
                 </main>
             </div>

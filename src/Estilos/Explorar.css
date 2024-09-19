@@ -1,4 +1,4 @@
-/* Estilos generales para el contenedor de Home */
+
 .home-container {
     overflow-y: auto; 
     overflow-x: hidden; 
@@ -7,16 +7,16 @@
     padding: 0;
   }
   
-  /* Título de la sección */
   .home-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #c3c3c3;
   }
 
 .search-section {
     text-align: center;
     margin: 20px 0;
+    color: #c3c3c3;
   }
 
 .message-box {
@@ -34,7 +34,7 @@
   height: 100px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 3px solid #2272af;
   margin-bottom: 10px;
   font-size: 16px;
   resize: none;
