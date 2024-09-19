@@ -1,10 +1,11 @@
 import React from 'react';
+import '../Estilos/Contactos.css'
 
 function Contactos () {
   return (
     <div>
-      <h1>Contactos</h1>
-      <p>Página para administrar</p>
+      <h1 className="title">Contactos</h1>
+      <p className='title'>Página para administrar</p>
     </div>
   );
 };
