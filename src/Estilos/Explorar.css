@@ -19,13 +19,12 @@
     margin: 20px 0;
   }
 
-/* Estilos del Message Box */
 .message-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 600px;
+  max-height: 100px;
+  max-width: 300px;
   margin: 0 auto;
   padding-bottom: 20px;
 }
@@ -43,10 +42,10 @@
 
 .message-box button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #2d626c;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
 }

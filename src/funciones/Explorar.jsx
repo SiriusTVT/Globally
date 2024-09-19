@@ -18,27 +18,27 @@ function Explorar () {
     { 
       image: imagen2, 
       name: 'Hans Müller',
-      description: 'Idioma: Alemán' 
+      description: 'Idioma: Inglés' 
     },
     { 
       image: imagen3, 
       name: 'Joao Da Silva', 
-      description: 'Idioma: Portuguese' 
+      description: 'Idioma: Inglés' 
     },
     { 
       image: imagen4,
       name: 'Giulia Bianchi', 
-      description: 'Idioma: Italiana' 
+      description: 'Idioma: Español' 
     },
     { 
       image: imagen5,
       name: 'Marco Rossi', 
-      description: 'Idioma: Italiano' 
+      description: 'Idioma: Español' 
     },
     { 
       image: imagen6,
       name: 'Marie Dubois', 
-      description: 'Idioma: Francés' 
+      description: 'Idioma: Inglés' 
     }
   ];
 
@@ -55,14 +55,13 @@ function Explorar () {
           />
         ))}
       </div>
-      
+
       <div className="search-section">
-        <h2>Buscar</h2>
+        <h2>Agregar Amigo</h2>
       </div>
 
-      {/* Agregar Message Box debajo de "Buscar" */}
       <div className="message-box">
-        <textarea placeholder="Escribe tu mensaje aquí..." />
+        <textarea placeholder="Ingresar el ID de Contacto" />
         <button type="button">Enviar</button>
       </div>
 
