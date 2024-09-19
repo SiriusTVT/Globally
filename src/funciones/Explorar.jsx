@@ -3,37 +3,42 @@ import '../Estilos/Explorar.css'
 import Card from './Card';
 import imagen1 from '../imagenes/Persona1.jpg';
 import imagen2 from '../imagenes/Persona2.jpg';
+import imagen3 from '../imagenes/Persona3.jpg';
+import imagen4 from '../imagenes/Persona4.jpg';
+import imagen5 from '../imagenes/Persona5.jpg';
+import imagen6 from '../imagenes/Persona6.jpg';
+
 function Explorar () {
   const contactos = [
     { 
       image: imagen1, 
       name: 'María Gómez', 
-      description: 'Amigo de la infancia.' 
+      description: 'Idioma: Español' 
     },
     { 
       image: imagen2, 
-      name: 'Juan Pérez',
-      description: 'Compañera de trabajo.' 
+      name: 'Hans Müller',
+      description: 'Idioma: Alemán' 
     },
     { 
-      image: '../imgenes/Persona1.jpg', 
-      name: 'Carlos Rodríguez', 
-      description: 'Vecino y amigo cercano.' 
+      image: imagen3, 
+      name: 'Joao Da Silva', 
+      description: 'Idioma: Portuguese' 
     },
     { 
-      image: '../imgenes/Persona1.jpg', 
-      name: 'Laura Torres', 
-      description: 'Amiga del colegio.' 
+      image: imagen4,
+      name: 'Giulia Bianchi', 
+      description: 'Idioma: Italiana' 
     },
     { 
-      image: '../imagenes/Img_inicio.jpg', 
-      name: 'Pedro Martínez', 
-      description: 'Colega en la oficina.' 
+      image: imagen5,
+      name: 'Marco Rossi', 
+      description: 'Idioma: Italiano' 
     },
     { 
-      image: '../imgenes/Persona1.jpg', 
-      name: 'Ana Fernández', 
-      description: 'Prima lejana.' 
+      image: imagen6,
+      name: 'Marie Dubois', 
+      description: 'Idioma: Francés' 
     }
   ];
 
@@ -50,6 +55,17 @@ function Explorar () {
           />
         ))}
       </div>
+      
+      <div className="search-section">
+        <h2>Buscar</h2>
+      </div>
+
+      {/* Agregar Message Box debajo de "Buscar" */}
+      <div className="message-box">
+        <textarea placeholder="Escribe tu mensaje aquí..." />
+        <button type="button">Enviar</button>
+      </div>
+
     </div>
   );
 };
