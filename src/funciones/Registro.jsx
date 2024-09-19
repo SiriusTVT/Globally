@@ -11,6 +11,7 @@ function Registro() {
     password: '',
     confirmPassword: ''
   });
+  const [error, setError] = useState('');
 
   // Manejar el cambio en los campos del formulario
   const handleChange = (e) => {
@@ -24,6 +25,12 @@ function Registro() {
   // Manejar el evento de submit del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Validar que las contraseñas coincidan
+    if (formData.password !== formData.confirmPassword) {
+      setError('Las contraseñas no coinciden');
+      return;
+    }
+    setError('');
     console.log('Datos del formulario:', formData); // Imprimir los datos del formulario
   };
 
@@ -92,6 +99,8 @@ function Registro() {
               className='input-field'
             />
           </div>
+          {/* // Mostrar mensaje de error si existe */}
+          {error && <p className='error-message'>{error}</p>} 
           <div>
             <button className='boton-registro' type='submit'>
               Registrarse
