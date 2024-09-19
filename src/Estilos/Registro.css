@@ -57,3 +57,13 @@ body {
     position: relative;
     top: -40px;
   }
+
+.error-message {
+    color: red;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    position: relative;
+    top: -40px;
+  }
