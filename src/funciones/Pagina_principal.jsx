@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useEffect } from "react";
+
 import BarraNav from './BarraNav';
 import Contactos from './Contactos';
 import Chats from './Chats';
@@ -8,6 +10,10 @@ import '../Estilos/Pagina_principal.css'
 
 function Pagina_principal () {
   const [activePage, setActivePage] = useState('Explorar');
+  
+  useEffect(() => {
+    document.title = `Globally - ${activePage}`;
+  }, [activePage]);
 
   const renderPage = () => {
     switch (activePage) {

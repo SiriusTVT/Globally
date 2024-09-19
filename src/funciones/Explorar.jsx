@@ -1,16 +1,18 @@
 import React from 'react';
 import '../Estilos/Explorar.css' 
 import Card from './Card';
+import imagen1 from '../imagenes/Persona1.jpg';
+import imagen2 from '../imagenes/Persona2.jpg';
 function Explorar () {
   const contactos = [
     { 
-      image: '../imagenes/Persona1.jpg', 
-      name: 'Juan Pérez', 
+      image: imagen1, 
+      name: 'María Gómez', 
       description: 'Amigo de la infancia.' 
     },
     { 
-      image: '../imgenes/Persona1.jpg', 
-      name: 'María Gómez', 
+      image: imagen2, 
+      name: 'Juan Pérez',
       description: 'Compañera de trabajo.' 
     },
     { 

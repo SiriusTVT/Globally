@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+
 import React from 'react';
 import '../Estilos/Pagina_inicial.css';
 import '../Estilos/Botones.css';
 
 
 function HomePage () {
-
+    useEffect(() => {
+        document.title = `Globally - Inicio`;
+    }, []);
+    
     const navigate = useNavigate();
 
     function handleClick2() {
@@ -42,7 +47,7 @@ function HomePage () {
                 <main>
                     <div>
                         <h2 className="paragraph1">
-                            Conecta al mundo, sin barreras lingüística.
+                            Conecta al mundo, sin barreras lingüísticas.
                         </h2>
                         <p className="paragraph1">
                             Conéctate con amigos y comparte tus momentos especiales.
