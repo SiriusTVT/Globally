@@ -26,7 +26,7 @@ function Explorar () {
       description: 'Amiga del colegio.' 
     },
     { 
-      image: '../imgenes/Persona1.jpg', 
+      image: '../imagenes/Img_inicio.jpg', 
       name: 'Pedro Martínez', 
       description: 'Colega en la oficina.' 
     },
@@ -53,60 +53,5 @@ function Explorar () {
     </div>
   );
 };
-    
-      {/* <div className="cards-container">
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image"></div>
-          <div className="card-description">
-            <h3>Nombre del Contacto</h3>
-            <p>Descripción del contacto...</p>
-          </div>
-        </div> */}
-
-
-      {/* </div> */}
-//     </div>
-//   );
-// };
 
 export default Explorar;
