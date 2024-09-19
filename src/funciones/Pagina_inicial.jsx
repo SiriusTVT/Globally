@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+
 import React from 'react';
 import '../Estilos/Pagina_inicial.css';
 import '../Estilos/Botones.css';
 
 
 function HomePage () {
-
+    useEffect(() => {
+        document.title = `Globally - Inicio`;
+    }, []);
+    
     const navigate = useNavigate();
 
     function handleClick2() {
