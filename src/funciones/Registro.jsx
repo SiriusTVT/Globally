@@ -2,15 +2,22 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import '../Estilos/Registro.css';
 import '../Estilos/Botones.css';
+import { useDispatch } from 'react-redux';
+import {addData} from '../features/formulario/formularioSlice.js';
 
 function Registro() {
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
+  
   const [error, setError] = useState('');
 
   // Manejar el cambio en los campos del formulario
@@ -31,6 +38,9 @@ function Registro() {
       return;
     }
     setError('');
+    
+    dispatch(addData(formData)); // Añadir los datos al store
+
     console.log('Datos del formulario:', formData); // Imprimir los datos del formulario
   };
 
