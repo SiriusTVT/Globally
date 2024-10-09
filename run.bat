@@ -22,3 +22,5 @@ echo Iniciando el servidor de LibreTranslate...
 start cmd /k "py -3.8 main.py --disable-web-ui"
 
 pause
+
+:: Fin del archivo
