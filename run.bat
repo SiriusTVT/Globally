@@ -1,7 +1,4 @@
 @echo off
-echo Iniciando el servidor de Vite...
-start cmd /k "npm run dev"
-
 echo Instalando los requerimientos previos de LibreTranslate...
 py -3.8 -m pip install libretranslate
 
@@ -21,6 +18,6 @@ cd LibreTranslate
 echo Iniciando el servidor de LibreTranslate...
 start cmd /k "py -3.8 main.py --disable-web-ui"
 
-pause
+exit  :: Cierra la ventana de la terminal después de iniciar el servidor
 
 :: Fin del archivo
