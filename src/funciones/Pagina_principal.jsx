@@ -29,7 +29,7 @@ function Pagina_principal () {
   };
 
   return (
-    <div className="fondo">
+    <div>
       <BarraNav setActivePage={setActivePage} />
       <div className="contenido">
         {renderPage()}

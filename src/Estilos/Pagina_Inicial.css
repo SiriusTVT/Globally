@@ -7,35 +7,86 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../imagenes/Img_inicio.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #f2f4f7;
 }
-  
-.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); 
-  }
-  
+
+.navbar {
+  background-color: #1E90FF;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
 .content {
     position: relative;
     z-index: 1;
     text-align: center;
     padding: 20px;
     font-size: 2em;
+    min-height: calc(100vh - 40px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
   }
 
-.title1{
-  color: turquoise;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.titulo{
+  color: #3284d6;
+  font-family: 'Inter', sans-serif;
 }
 
-.paragraph1{
-  color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.parrafo{
+  color: #303030;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Organiza los botones horizontalmente y el espaciado entre ellos */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.boton-inicio-sesion {
+  padding: 1rem 2rem;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.boton-inicio-sesion:hover {
+  background: #fff;
+  color: #1E90FF;
+}
+
+.boton-registro {
+  padding: 1rem 2rem;
+  border: none;
+  background: #fff;
+  color: #1E90FF;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.boton-registro:hover {
+  background: #1E90FF;
+  color: #fff;
+  border: 2px solid #fff;
 }

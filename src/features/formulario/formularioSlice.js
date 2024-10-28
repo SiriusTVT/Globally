@@ -11,6 +11,7 @@ export const formularioSlice = createSlice({
     name:'formulario',
     initialState,
     reducers:{
+        
         addData: (state,action)=>{
             state.push(action.payload);
         }
