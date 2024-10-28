@@ -1,11 +1,11 @@
 import './App.css'
 import React from "react"
 
-import Registro from './funciones/Registro'
-import HomePage from './funciones/Pagina_inicial'
-import Inicio_sesion from './funciones/Inicio_sesion'
-import Pagina_principal from './funciones/Pagina_principal'
-
+import HomePage from './pages/HomePage';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import MainPage from './pages/MainPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes,Route} from "react-router-dom";
 
 
@@ -14,12 +14,39 @@ function App() {
     <div>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/registro" element={<Registro />} />
-            <Route path="/inicio_sesion" element={<Inicio_sesion />} />
-            <Route path="/pagina_principal" element={<Pagina_principal />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/mainpage" element={<MainPage />} />
         </Routes>
     </div>
   )
 }
 
 export default App
+// App.jsx
+// import React from 'react';
+// import { Routes, Route } from 'react-router-dom';
+
+// // Páginas
+// import HomePage from './pages/HomePage';
+// import Register from './pages/Register';
+// import Login from './pages/Login';
+// import MainPage from './pages/MainPage';
+
+// // Estilos
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// const App = () => {
+//   return (
+//     <main className="app-container">
+//       <Routes>
+//         <Route path="/" element={<HomePage />} />
+//         <Route path="/register" element={<Register />} />
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/mainpage" element={<MainPage/>} />
+//       </Routes>
+//     </main>
+//   );
+// };
+
+// export default App;

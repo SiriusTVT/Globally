@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import '../Estilos/Registro.css';
+import '../Estilos/Register.css';
 import '../Estilos/Botones.css';
 import { useDispatch } from 'react-redux';
 import {addData} from '../features/formulario/formularioSlice.js';
 
-function Registro() {
+function Register() {
 
   const dispatch = useDispatch();
 
@@ -125,4 +125,4 @@ function Registro() {
   );
 }
 
-export default Registro;
+export default Register;

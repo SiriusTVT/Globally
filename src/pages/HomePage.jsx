@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Estilos/Pagina_inicial.css';
+import '../Estilos/HomePage.css';
 import '../Estilos/Botones.css';
 
 const HomePage = () => {
@@ -12,11 +13,11 @@ const HomePage = () => {
   }, []);
 
   const handleLogin = () => {
-    navigate('/inicio_sesion');
+    navigate('/login');
   };
 
   const handleRegister = () => {
-    navigate('/registro');
+    navigate('/register');
   };
 
   return (

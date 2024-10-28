@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-import BarraNav from './BarraNav';
-import Contactos from './Contactos';
-import Chats from './Chats';
-import Explorar from './Explorar';
+import BarraNav from '../funciones/BarraNav';
+import Contactos from '../funciones/Contactos';
+import Chats from '../funciones/Chats';
+import Explorar from '../funciones/Explorar';
 import React from 'react'
-import '../Estilos/Pagina_principal.css' 
+import '../Estilos/MainPage.css' 
 
-function Pagina_principal () {
+function MainPage () {
   const [activePage, setActivePage] = useState('Explorar');
   
   useEffect(() => {
@@ -38,4 +38,4 @@ function Pagina_principal () {
   );
 };
 
-export default Pagina_principal;
+export default MainPage;
