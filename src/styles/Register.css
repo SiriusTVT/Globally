@@ -1,15 +1,3 @@
-html, body {
-  height: 100%;
-  margin: 0;
-
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Variables de color y estilo */
 :root {
   --primary-color: #4F46E5;
