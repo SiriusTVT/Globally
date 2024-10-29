@@ -4,16 +4,18 @@ import '../styles/NavBar.css';
 
 const NavBar = () => {
   const menuItems = [
-    { id: 1, text: 'Explorar', icon: '🔍', path: '/explorar' },
-    { id: 2, text: 'Contactos', icon: '👥', path: '/contactos' },
-    { id: 3, text: 'Chats', icon: '💬', path: '/chats' }
+    { id: 1, text: 'Inicio', icon: '🏠', path: '/mainpage' },
+    { id: 2, text: 'Explorar', icon: '🔍', path: '/explorar' },
+    { id: 3, text: 'Contactos', icon: '👥', path: '/contactos' },
+    { id: 4, text: 'Chats', icon: '💬', path: '/chats' },
+    { id: 5, text: 'Cerrar Sesión', icon: '⬅️', path: '/' }
   ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo" onClick={() => navigate('/')}>
-          <span className="logo-text">App</span>
+        <div className="logo">
+          <p className="logo-text">Globally</p>
         </div>
         <div className="nav-items">
           {menuItems.map(item => (
