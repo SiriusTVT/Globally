@@ -71,12 +71,12 @@ const HomePage = () => {
         <section className="hm-section">
           <div className="hm-section-content hm-section-right-image">
             <div className="hm-text-content hm-animate-fade-in">
-              <h2 className="hm-section-title">Aprende a Tu Ritmo</h2>
+              <h2 className="hm-section-title">Aprende a tu ritmo</h2>
               <p className="hm-section-subtitle">
               Tu cultura, tu idioma, tu historia - compartida con el mundo.
               </p>
               <p className="hm-section-text">
-              Explora publicaciones auténticas compartidas por usuarios de todo el mundo 
+              Explora publicaciones compartidas por usuarios de todo el mundo 
               en su idioma nativo. Desde historias cotidianas hasta reflexiones profundas, 
               cada publicación es una oportunidad para mejorar al nivel que más te convenga.
               </p>

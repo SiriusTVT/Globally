@@ -1,9 +1,9 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import '../styles/Pages.css';
-import '../styles/Contactos.css';
+import '../styles/Amigos.css';
 
-const Contactos = () => {
+const Amigos = () => {
   const contactos = [
     { id: 1, nombre: 'Ana García', email: 'ana@ejemplo.com' },
     { id: 2, nombre: 'Carlos López', email: 'carlos@ejemplo.com' },
@@ -14,7 +14,7 @@ const Contactos = () => {
     <div className="page-container">
       <NavBar />
       <div className="page-content">
-        <h1>Contactos</h1>
+        <h1>Amigos</h1>
         <div className="contacts-list">
           {contactos.map((contacto) => (
             <div key={contacto.id} className="contact-card">
@@ -33,4 +33,4 @@ const Contactos = () => {
   );
 };
 
-export default Contactos;
+export default Amigos;

@@ -6,7 +6,7 @@ const NavBar = () => {
   const menuItems = [
     { id: 1, text: 'Inicio', icon: '🏠', path: '/mainpage' },
     { id: 2, text: 'Explorar', icon: '🔍', path: '/explorar' },
-    { id: 3, text: 'Contactos', icon: '👥', path: '/contactos' },
+    { id: 3, text: 'Amigos', icon: '👥', path: '/amigos' },
     { id: 4, text: 'Chats', icon: '💬', path: '/chats' },
     { id: 5, text: 'Cerrar Sesión', icon: '⬅️', path: '/' }
   ];
