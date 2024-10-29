@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Estilos/Login.css';
+import '../styles/Login.css';
 
 function Login() {
     const navigate = useNavigate();
