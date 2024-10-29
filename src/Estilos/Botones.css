@@ -1,20 +1,47 @@
-.boton-registro {
-    background-color: #4CAF50; 
-    border: none; 
-    color: white; 
-    padding: 15px 32px; 
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px; 
-    margin: 4px 2px; 
-    cursor: pointer; 
-    border-radius: 12px; 
-}
-
-.boton-registro:hover {
-    background-color: #45a049; 
-}
+/* Organiza los botones horizontalmente y el espaciado entre ellos */
+.auth-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+  }
+  
+.boton-login {
+    padding: 0.3rem 1rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+.boton-login:hover {
+    background: #fff;
+    color: #1E90FF;
+  }
+  
+.boton-register {
+    padding: 0.3rem 1rem;
+    border: none;
+    background: #fff;
+    color: #1E90FF;
+    border: 2px solid #1E90FF;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+.boton-register:hover {
+    background: #1E90FF;
+    color: #fff;
+    border: 2px solid #fff;
+  }
 
 .boton-regresar {
     background-color: #f44336; 
@@ -34,20 +61,3 @@
     background-color: #d32f2f; 
 }
 
-.boton-inicio-sesion {
-    background-color: #008CBA; 
-    border: none; 
-    color: white; 
-    padding: 15px 32px; 
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px; 
-    margin: 4px 2px; 
-    cursor: pointer; 
-    border-radius: 12px; 
-}
-
-.boton-inicio-sesion:hover {
-    background-color: #007bb5; 
-}

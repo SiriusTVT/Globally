@@ -1,10 +1,134 @@
-.title3{
-    color: #7cdb94;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-}
-
-.card {
+/* Variables de color y estilo */
+:root {
+    --primary-color: #4F46E5;
+    --background-color: #F9FAFB;
+    --text-color: #111827;
+    --border-color: #E5E7EB;
+    --error-color: #ffaa32;
+    --success-color: #10B981;
+  }
+  
+  /* Estilos base */
+  body {
+    background-color: var(--background-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .content {
+    width: 400px;
+    height: 450px;
+    background: white;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+    
+  /* Formulario */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Labels */
+  .label {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+    
+  }
+  
+  /* Campos de entrada */
+  .input-field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 5px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  }
+  
+  .input-field::placeholder {
+    color: #9CA3AF;
+  }
+  
+  /* Grupo de botones */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-top: 8px;
+    
+  }
+  
+  /* Botones */
+  .boton-inicio-sesion {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
     border: none;
-}
- 
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .boton-inicio-sesion:hover {
+    background-color: #322a87;
+  }
+  
+  .boton-regresar {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 12px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .boton-regresar:hover {
+    background-color: #c0c7d6;
+    border-color: #c0c7d6;
+  }
+  
+  /* Estilos de validación */
+  .input-field:invalid {
+    border-color: var(--error-color);
+  }
+  
+  .input-field:valid:not(:placeholder-shown) {
+    border-color: var(--success-color);
+  }

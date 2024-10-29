@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const BarraNav = ({ setActivePage }) => {
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate('/homepage');
+    navigate('/');
     console.log('Botón de Cerrar Sesión presionado');
   };
 
