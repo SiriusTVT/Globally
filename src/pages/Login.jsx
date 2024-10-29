@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Estilos/Login.css';
 
 function Login() {
@@ -33,12 +34,14 @@ function Login() {
     };
 
     return (
-        <div className="container">
-            <div className="content">
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label className="label">
-                            Email
+        <div className="login-container">
+            <div className="login-content">
+                <h1 className="login-title">Inicio de Sesión</h1>
+                
+                <form onSubmit={handleSubmit} className="login-form">
+                    <div className="login-form-group">
+                        <label className="login-label">
+                            Email:
                         </label>
                         <input
                             type="email"
@@ -46,16 +49,16 @@ function Login() {
                             name="email"
                             placeholder="tucorreo@ejemplo.com"
                             required
-                            className="input-field"
+                            className="login-input"
                             value={formData.email}
                             onChange={handleInputChange}
                             autoComplete="email"
                         />
                     </div>
 
-                    <div className="form-group">
-                        <label className="label">
-                            Contraseña
+                    <div className="login-form-group">
+                        <label className="login-label">
+                            Contraseña:
                         </label>
                         <input
                             type="password"
@@ -63,28 +66,20 @@ function Login() {
                             name="password"
                             placeholder="Ingresa tu contraseña"
                             required
-                            className="input-field"
+                            className="login-input"
                             value={formData.password}
                             onChange={handleInputChange}
                             autoComplete="current-password"
                         />
                     </div>
 
-                    <div className="button-group">
-                        <button 
-                            className="boton-inicio-sesion" 
-                            type="submit"
-                        >
-                            Iniciar Sesión
-                        </button>
+                    <div className="login-button-group">
+                        <button className="login-submit-btn" 
+                            type="submit">Iniciar Sesión</button>
                         
-                        <button 
-                            className="boton-regresar" 
+                        <button className="login-back-btn" 
                             type="button" 
-                            onClick={handleBack}
-                        >
-                            Regresar
-                        </button>
+                            onClick={handleBack}> Regresar </button>
                     </div>
                 </form>
             </div>

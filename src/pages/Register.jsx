@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Estilos/Register.css';
-import '../Estilos/Botones.css';
 import { useDispatch } from 'react-redux';
-import {addData} from '../features/formulario/formularioSlice.js';
+import { addData } from '../features/formulario/formularioSlice.js';
 
 function Register() {
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    document.title = 'Globally - Registro';
+  }, []);
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -20,105 +21,114 @@ function Register() {
   
   const [error, setError] = useState('');
 
-  // Manejar el cambio en los campos del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
-      ...prevState, // Mantener los valores anteriores
-      [name]: value // Actualizar el valor del campo que cambió
+      ...prevState,
+      [name]: value
     }));
   };
 
-  // Manejar el evento de submit del formulario
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-    // Validar que las contraseñas coincidan
+    e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
       return;
     }
     setError('');
-    
-    dispatch(addData(formData)); // Añadir los datos al store
-
-    console.log('Datos del formulario:', formData); // Imprimir los datos del formulario
+    dispatch(addData(formData));
+    console.log('Datos del formulario:', formData);
   };
 
-  // Manejar el evento de click en el botón de regresar
   const handleBack = () => {
     navigate('/');
     console.log('Botón de regresar presionado');
   };
 
   return (
-    <div>
-      <div className="content">
-        <h1 className='title2'>Registro</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <p className='label'>Nombre: </p>
+    <div className="register-container">
+      <div className="register-content">
+        <h1 className="register-title">Registro</h1>
+        
+        <form onSubmit={handleSubmit} className="register-form">
+          <div className="register-form-group">
+            <label className="register-label">
+              Nombre:
+            </label>
             <input
               type="text"
               id="nombre"
               name="nombre"
-              placeholder='Nombre'
+              placeholder="Tu nombre completo"
               value={formData.nombre}
               onChange={handleChange}
               required
-              className='input-field'
+              className="register-input"
+              autoComplete="name"
             />
           </div>
-          <div>
-            <p className='label'>Email: </p>
+
+          <div className="register-form-group">
+            <label className="register-label">
+              Email:
+            </label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder='Email'
+              placeholder="tucorreo@ejemplo.com"
               value={formData.email}
               onChange={handleChange}
               required
-              className='input-field'
+              className="register-input"
+              autoComplete="email"
             />
           </div>
-          <div>
-            <p className='label'>Contraseña: </p>
+
+          <div className="register-form-group">
+            <label  className="register-label">
+              Contraseña:
+            </label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder='Contraseña'
+              placeholder="Ingresa tu contraseña"
               value={formData.password}
               onChange={handleChange}
               required
-              className='input-field'
+              className="register-input"
+              autoComplete="new-password"
             />
           </div>
-          <div>
-            <p className='label'>Confirmar Contraseña: </p>
+
+          <div className="register-form-group">
+            <label  className="register-label">
+              Confirmar Contraseña:
+            </label>
             <input
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              placeholder='Confirmar Contraseña'
+              placeholder="Confirma tu contraseña"
               value={formData.confirmPassword}
               onChange={handleChange}
               required
-              className='input-field'
+              className="register-input"
+              autoComplete="new-password"
             />
           </div>
-          {/* // Mostrar mensaje de error si existe */}
-          {error && <p className='error-message'>{error}</p>} 
-          <div>
-            <button className='boton-registro' type='submit'>
+
+          {error && <div className="register-error">{error}</div>}
+
+          <div className="register-button-group">
+            <button className="register-submit-btn" type="submit">
               Registrarse
             </button>
-
-            <button className='boton-regresar' type='button' onClick={handleBack}>
+            <button className="register-back-btn" type="button" onClick={handleBack}>
               Regresar
             </button>
           </div>
-
         </form>
       </div>
     </div>
