@@ -8,7 +8,7 @@
   --accent-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   --max-width: 1440px;
   --header-height: 80px;
-  --section-padding: 4rem 2rem;
+  --section-padding: 7rem 1rem;
   --section-gap: 2rem;
 }
 
@@ -106,7 +106,6 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
-  
 }
 
 .hm-section-content {
@@ -139,7 +138,7 @@ body {
 .hm-section-right-image {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -147,7 +146,7 @@ body {
 .hm-section-left-image {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
   direction: rtl;
 }

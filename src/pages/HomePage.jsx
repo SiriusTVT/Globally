@@ -41,27 +41,27 @@ const HomePage = () => {
       </nav>
       
       <main>
-        {/* Primera sección (Hero) */}
         <section className="hm-section">
         <div className="hm-section-content hm-section-left-image">
             <div className="hm-text-content hm-animate-fade-in">  
-              <h2 className="hm-section-subtitle">
-              Un mundo de historias, sin barreras de idioma
+              <h2 className="hm-section-title">
+              Un mundo de historias, sin barreras lingüisticas.
               </h2>
               <div>
-                <p className="hm-section-text">     
-                ✨Chats traducidos instantáneamente
+                <p className="hm-section-subtitle">   
+                  🤝Conecta, comparte y aprende en cualquier idioma  
                 </p>
-                <p className="hm-section-text">
+                <p className="hm-section-subtitle">
                   🌍Conoce personas de todo el mundo
                 </p>
- 
+                <p className="hm-section-subtitle">
+                  ✨Chats traducidos instantáneamente
+                </p>
               </div>
             </div>
             <div className="hm-image-container">
-              <img 
-                src="/api/placeholder/600/400" 
-                alt="Demostración de chat traducido" 
+              <img src="/images/PersonasConversando.jpg" 
+                alt="Personas de diversas culturas conversando" 
               />
             </div>
           </div>
@@ -71,18 +71,20 @@ const HomePage = () => {
         <section className="hm-section">
           <div className="hm-section-content hm-section-right-image">
             <div className="hm-text-content hm-animate-fade-in">
-              <h2 className="hm-section-title">Comunícate sin límites</h2>
+              <h2 className="hm-section-title">Aprende a Tu Ritmo</h2>
               <p className="hm-section-subtitle">
               Tu cultura, tu idioma, tu historia - compartida con el mundo.
               </p>
               <p className="hm-section-text">
-                Texto
+              Explora publicaciones auténticas compartidas por usuarios de todo el mundo 
+              en su idioma nativo. Desde historias cotidianas hasta reflexiones profundas, 
+              cada publicación es una oportunidad para mejorar al nivel que más te convenga.
               </p>
             </div>
             <div className="hm-image-container">
               <img 
-                src="/api/placeholder/600/400" 
-                alt="Demostración de chat traducido" 
+                src="/images/Publicaciones.jpg" 
+                alt="Una chica leyendo y su imaginacion se muestra en nubes a su alrededor" 
               />
             </div>
           </div>
@@ -94,16 +96,19 @@ const HomePage = () => {
             <div className="hm-text-content hm-animate-fade-in">
               <h2 className="hm-section-title">Expande tus horizontes</h2>
               <p className="hm-section-subtitle">
-                Mejora tu idioma mientras exploras nuevas culturas
+                Conecta Sin Fronteras
               </p>
               <p className="hm-section-text">
-                texto
+              Gracias a nuestro sistema integrado de traducción de chat, 
+              las conversaciones fluyen naturalmente. Interactúa con personas 
+              de todo el mundo, haz preguntas y forma conexiones significativas
+              sin preocuparte por las barreras del idioma.
               </p>
             </div>
             <div className="hm-image-container">
               <img 
-                src="/api/placeholder/600/400" 
-                alt="Conexiones globales" 
+                src="/images/Computadora.jpg" 
+                alt="Una computadora que despliega muchas aplicaciones de conversación" 
               />
             </div>
           </div>
