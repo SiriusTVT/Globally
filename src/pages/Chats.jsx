@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import '../styles/Pages.css';
+import '../styles/Chats.css';
 
 const Chats = () => {
   const chats = [
