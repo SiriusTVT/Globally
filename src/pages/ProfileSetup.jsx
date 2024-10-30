@@ -10,10 +10,10 @@ function ProfileSetup() {
     const dropdownRef1 = useRef(null);
     const dropdownRef2 = useRef(null);
   
-  const idiomas = [
-    'Español', 'Inglés', 'Francés', 'Portugués', 'Alemán',
-    'Italiano', 'Ruso', 'Japonés'
-  ];
+    const idiomas = [
+        'Español', 'Inglés', 'Francés', 'Portugués', 'Alemán',
+        'Italiano', 'Ruso', 'Japonés'
+    ];
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -73,11 +73,8 @@ function ProfileSetup() {
   return (
     <div className="ps-container">
       <form className="ps-form">
-        <div className="ps-welcome">
             <h1 className="ps-title">¡Hola {nombreUsuario}!</h1>
             <p className="ps-subtitle">Vamos a realizar configuraciones para tu perfil</p>
-        </div>
-
         <div className="ps-form-group">
           <label>Nombre de Usuario</label>
           <input
@@ -180,7 +177,7 @@ function ProfileSetup() {
         </div>
 
         <div className="ps-buttons">
-          <button type="submit" className="ps-button-primary">Guardar</button>
+          <button type="submit" className="ps-button-primary">Continuar</button>
           <button type="button" className="ps-button-secondary" onClick={() => navigate('/')}>
             Cancelar
           </button>

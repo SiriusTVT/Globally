@@ -3,63 +3,62 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* Formulario */
-  .ps-form {
+}
+
+/* Formulario */
+.ps-form {
     background-color: white;
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ps-form h1 {
+}
+
+.ps-form h1 {
     margin: 0 0 8px;
     font-size: 24px;
-    color: #333;
-  }
-  
-  .ps-form p {
+    color: var(--primary-color);
+}
+
+.ps-form p {
     margin: 0 0 24px;
-    color: #666;
-  }
-  
-  /* Grupos de formulario */
-  .ps-form-group {
+    color: var(--text-secondary);
+}
+
+/* Grupos de formulario */
+.ps-form-group {
     position: relative;
     margin-bottom: 20px;
-  }
-  
-  .ps-form-group label {
+}
+
+.ps-form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #333;
-  }
-  
-  .ps-form-group input[type="text"] {
+}
+
+.ps-form-group input[type="text"] {
     width: 100%;
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
-  }
-  
-  .ps-form-group input[type="text"]:focus {
+}
+
+.ps-form-group input[type="text"]:focus {
     outline: none;
     border-color: #2196f3;
-  }
-  
-  /* Tags */
-  .ps-tags {
+}
+
+/* Tags */
+.ps-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 8px;
     min-height: 32px;
-  }
-  
-  .ps-tag {
+}
+
+.ps-tag {
     display: inline-flex;
     align-items: center;
     background-color: #e3f2fd;
@@ -67,9 +66,9 @@
     border-radius: 16px;
     font-size: 14px;
     color: #1976d2;
-  }
-  
-  .ps-tag button {
+}
+
+.ps-tag button {
     background: none;
     border: none;
     color: #1976d2;
@@ -77,10 +76,10 @@
     cursor: pointer;
     padding: 0 4px;
     font-size: 18px;
-  }
-  
-  /* Botón de selección */
-  .ps-select-button {
+}
+
+/* Botón de selección */
+.ps-select-button {
     width: 100%;
     padding: 8px 12px;
     background-color: white;
@@ -92,19 +91,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .ps-select-button:hover {
+}
+
+.ps-select-button:hover {
     background-color: #f5f5f5;
-  }
-  
-  /* Dropdown */
-  .ps-dropdown {
+}
+
+/* Dropdown */
+.ps-dropdown {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: var(--text-primary);
     border: 1px solid #ddd;
     border-radius: 4px;
     max-height: 200px;
@@ -112,91 +111,83 @@
     z-index: 1000;
     margin-top: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ps-dropdown-item {
+}
+
+.ps-dropdown-item {
     padding: 8px 12px;
     cursor: pointer;
     font-size: 14px;
-  }
-  
-  .ps-dropdown-item:hover {
+}
+
+.ps-dropdown-item:hover {
     background-color: #f5f5f5;
-  }
-  
-  .ps-dropdown-item.selected {
+}
+
+.ps-dropdown-item.selected {
     background-color: #e3f2fd;
     color: #1976d2;
-  }
-  
-  /* Grupo de checkboxes */
-  .ps-checkbox-group {
+}
+
+/* Grupo de checkboxes */
+.ps-checkbox-group {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-  }
-  
-  .ps-checkbox-label {
+}
+
+.ps-checkbox-label {
     display: flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
     font-weight: normal;
-  }
-  
-  .ps-checkbox-label input[type="checkbox"] {
+}
+
+.ps-checkbox-label input[type="checkbox"] {
     cursor: pointer;
-  }
-  
-  /* Botones */
-  .ps-buttons {
+}
+
+/* Botones */
+.ps-buttons {
     display: flex;
     gap: 12px;
     margin-top: 24px;
-  }
-  
-  .ps-button-primary {
+}
+
+.ps-button-primary {
     padding: 8px 16px;
     background-color: #1976d2;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .ps-button-primary:hover {
+}
+
+.ps-button-primary:hover {
     background-color: #1565c0;
-  }
-  
-  .ps-button-secondary {
+}
+
+.ps-button-secondary {
     padding: 8px 16px;
     background-color: white;
     color: #333;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .ps-button-secondary:hover {
+}
+
+.ps-button-secondary:hover {
     background-color: #f5f5f5;
-  }
-  
-  /* Scrollbar personalizado para el dropdown */
-  .ps-dropdown::-webkit-scrollbar {
+}
+
+/* Scrollbar personalizado para el dropdown */
+.ps-dropdown::-webkit-scrollbar {
     width: 8px;
-  }
-  
-  .ps-dropdown::-webkit-scrollbar-track {
+}
+
+.ps-dropdown::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  .ps-dropdown::-webkit-scrollbar-thumb {
+}
+
+.ps-dropdown::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 4px;
-  }
-  
-  .ps-dropdown::-webkit-scrollbar-thumb:hover {
+}
+
+.ps-dropdown::-webkit-scrollbar-thumb:hover {
     background: #666;
-  }
+}
