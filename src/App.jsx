@@ -16,6 +16,7 @@ import MyPosts from './pages/MyPosts';
 import Posts from './pages/Posts';
 import RecentPosts from './pages/RecentPosts';
 import Profile from './pages/Profile';
+import ProfileSetup from './pages/ProfileSetup';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/publicar" element={<Posts />} />
         <Route path="/recientes" element={<RecentPosts />} />
         <Route path="/perfil" element={<Profile />} />
+        <Route path="/setup-perfil" element={<ProfileSetup />} />
       </Routes>
     </main>
   );
