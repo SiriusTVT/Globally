@@ -8,6 +8,7 @@ const Chats = () => {
     { id: 1, nombre: 'Ana García', mensaje: 'Hola, ¿cómo estás?', tiempo: '12:30' },
     { id: 2, nombre: 'Carlos López', mensaje: '¿Nos vemos mañana?', tiempo: '11:45' },
     { id: 3, nombre: 'María Rodríguez', mensaje: 'Gracias por la ayuda', tiempo: '10:15' },
+    { id: 3, nombre: 'María Rodríguez', mensaje: 'Gracias por la ayuda', tiempo: '10:15' }
   ];
 
   return (

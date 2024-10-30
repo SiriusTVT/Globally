@@ -1,100 +1,202 @@
-.profile-setup-container {
-    min-height: 100vh;
-    padding: 2rem;
+/* Contenedor principal */
+.ps-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Formulario */
+  .ps-form {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ps-form h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .ps-form p {
+    margin: 0 0 24px;
+    color: #666;
+  }
+  
+  /* Grupos de formulario */
+  .ps-form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .ps-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .ps-form-group input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .ps-form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #2196f3;
+  }
+  
+  /* Tags */
+  .ps-tags {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    min-height: 32px;
+  }
+  
+  .ps-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e3f2fd;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #1976d2;
+  }
+  
+  .ps-tag button {
+    background: none;
+    border: none;
+    color: #1976d2;
+    margin-left: 4px;
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 18px;
+  }
+  
+  /* Botón de selección */
+  .ps-select-button {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   
-  .profile-setup-content {
-    background: white;
-    border-radius: 20px;
-    padding: 2.5rem;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  .ps-select-button:hover {
+    background-color: #f5f5f5;
   }
   
-  .welcome-section {
-    text-align: center;
-    margin-bottom: 3rem;
+  /* Dropdown */
+  .ps-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .welcome-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+  .ps-dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
   }
   
-  .welcome-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
+  .ps-dropdown-item:hover {
+    background-color: #f5f5f5;
   }
   
-  .profile-setup-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+  .ps-dropdown-item.selected {
+    background-color: #e3f2fd;
+    color: #1976d2;
   }
   
-  .form-group {
-    margin-bottom: 1.5rem;
+  /* Grupo de checkboxes */
+  .ps-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
   
-  .form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+  .ps-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: normal;
   }
   
-  .form-input,
-  .form-textarea {
-    width: 100%;
-    padding: 0.75rem;
+  .ps-checkbox-label input[type="checkbox"] {
+    cursor: pointer;
   }
   
-  .form-input:focus,
-  .form-textarea:focus {
-    outline: none;
-    border-color: #4299e1;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+  /* Botones */
+  .ps-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
   }
   
-  .form-textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  .submit-button {
-    grid-column: 1 / -1;
-    background: var(--primary-color);
+  .ps-button-primary {
+    padding: 8px 16px;
+    background-color: #1976d2;
     color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
   }
   
-  .submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
+  .ps-button-primary:hover {
+    background-color: #1565c0;
   }
   
-  .submit-button:active {
-    transform: translateY(0);
+  .ps-button-secondary {
+    padding: 8px 16px;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
   }
   
-  
-  /* Animaciones */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .ps-button-secondary:hover {
+    background-color: #f5f5f5;
   }
   
-  .profile-setup-content {
-    animation: fadeIn 0.6s ease-out;
+  /* Scrollbar personalizado para el dropdown */
+  .ps-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .ps-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .ps-dropdown::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .ps-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #666;
   }

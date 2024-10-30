@@ -8,8 +8,9 @@ const NavBar = () => {
     { id: 2, text: 'Explorar', icon: '🔍', path: '/explorar' },
     { id: 3, text: 'Amigos', icon: '👥', path: '/amigos' },
     { id: 4, text: 'Chats', icon: '💬', path: '/chats' },
-    { id: 5, text: 'Cerrar Sesión', icon: '⬅️', path: '/' },
-    { id: 6, text: 'Perfil', icon: '👤', path: '/perfil' }
+    { id: 5, text: 'Perfil', icon: '👤', path: '/perfil' },
+    { id: 6, text: 'Cerrar Sesión', icon: '⬅️', path: '/' }
+
   ];
 
   return (

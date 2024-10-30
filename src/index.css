@@ -44,6 +44,8 @@ input{
   box-sizing: border-box;
   
 }
+
+
 input:invalid:not(:placeholder-shown) {
   border-color: var(--error-color);
 }
