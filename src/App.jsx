@@ -15,6 +15,7 @@ import Historias from './pages/Historias';
 import MyPosts from './pages/MyPosts';
 import Posts from './pages/Posts';
 import RecentPosts from './pages/RecentPosts';
+import Profile from './pages/Profile';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/mis-publicaciones" element={<MyPosts />} />
         <Route path="/publicar" element={<Posts />} />
         <Route path="/recientes" element={<RecentPosts />} />
+        <Route path="/perfil" element={<Profile />} />
       </Routes>
     </main>
   );

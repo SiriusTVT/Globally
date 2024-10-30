@@ -10,31 +10,37 @@ const Cards = () => {
       title: 'Historias',
       description: 'Explora historias inspiradoras de nuestra comunidad',
       path: '/historias',
-      image: '/api/placeholder/400/320'
+      image: '/images/historias.png'
     },
     {
       title: 'Publicaciones Recientes',
       description: 'Descubre las últimas actualizaciones y contenido nuevo',
       path: '/recientes',
-      image: '/api/placeholder/400/320'
+      image: '/images/publicacionesRecientes.png'
     },
     {
       title: 'Mis Favoritos',
       description: 'Accede a tu colección personal de contenidos guardados',
       path: '/favoritos',
-      image: '/api/placeholder/400/320'
+      image: '/images/favoritos.png'
     },
     {
       title: 'Mis Publicaciones',
       description: 'Gestiona y revisa todas tus publicaciones en un solo lugar',
       path: '/mis-publicaciones',
-      image: '/api/placeholder/400/320'
+      image: '/images/misPublicaciones.png'
     },
     {
       title: 'Publicar',
       description: 'Comparte tu historia y experiencias con nuestra comunidad',
       path: '/publicar',
-      image: '/api/placeholder/400/320'
+      image: '/images/upload.png'
+    },
+    {
+      title: 'Perfil',
+      description: 'Administra tu información personal y preferencias de cuenta',
+      path: '/perfil',
+      image: '/images/perfil.png'
     }
   ];
 
