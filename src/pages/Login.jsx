@@ -62,6 +62,7 @@ function Login() {
                                 name="password"
                                 required
                                 className="login-input"
+                                placeholder="********"
                                 value={formData.password}
                                 onChange={handleInputChange}
                                 autoComplete="current-password"

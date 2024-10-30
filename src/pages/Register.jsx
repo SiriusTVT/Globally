@@ -62,6 +62,7 @@ function Register() {
                 type="text"
                 id="nombre"
                 name="nombre"
+                placeholder='Name'
                 value={formData.nombre}
                 onChange={handleChange}
                 required
@@ -93,6 +94,7 @@ function Register() {
                 type="password"
                 id="password"
                 name="password"
+                placeholder="********"
                 value={formData.password}
                 onChange={handleChange}
                 required
@@ -109,6 +111,7 @@ function Register() {
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
+                placeholder="********"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
