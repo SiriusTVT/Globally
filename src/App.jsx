@@ -12,7 +12,7 @@ import Amigos from './pages/Amigos';
 import Chats from './pages/Chats';
 import Favoritos from './pages/Favoritos';
 import MyPosts from './pages/MyPosts';
-import Posts from './pages/Posts';
+import Publicar from './pages/Publicar';
 import RecentPosts from './pages/RecentPosts';
 import Profile from './pages/Profile';
 import ProfileSetup from './pages/ProfileSetup';
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/favoritos" element={<Favoritos />} />
         <Route path="/destacados" element={<Destacados />} />
         <Route path="/mis-publicaciones" element={<MyPosts />} />
-        <Route path="/publicar" element={<Posts />} />
+        <Route path="/publicar" element={<Publicar />} />
         <Route path="/recientes" element={<RecentPosts />} />
         <Route path="/perfil" element={<Profile />} />
         <Route path="/setup-perfil" element={<ProfileSetup />} />

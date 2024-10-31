@@ -1,4 +1,3 @@
-/* Estilos para la página Chats */
 .chats-list {
   display: flex;
   flex-direction: column;
@@ -9,10 +8,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #000000; /* Texto negro */
+  background-color: #ffffff; 
+  color: #000000; 
   padding: 1rem;
-  border: 1px solid #d1d5db; /* Borde gris claro */
+  border: 1px solid #d1d5db; 
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -22,15 +21,15 @@
 }
 
 .chat-button:hover {
-  background-color: #f3f4f6; /* Fondo gris claro al pasar el ratón */
+  background-color: #f3f4f6; 
 }
 
 .chat-initial {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4a5568; /* Fondo gris oscuro */
-  color: #ffffff; /* Texto blanco */
+  background-color: #4a5568; 
+  color: #ffffff; 
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -50,17 +49,17 @@
 }
 
 .chat-header h3 {
-  color: #1f2937; /* Texto gris oscuro */
+  color: #1f2937; 
   margin: 0;
 }
 
 .chat-time {
-  color: #6b7280; /* Texto gris medio */
+  color: #6b7280; 
   font-size: 0.875rem;
 }
 
 .chat-message {
-  color: #6b7280; /* Texto gris medio */
+  color: #6b7280; 
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
