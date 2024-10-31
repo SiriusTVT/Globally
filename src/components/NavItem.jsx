@@ -10,9 +10,9 @@ const NavItem = ({ icon, text, path }) => {
   };
 
   return (
-    <div className="nav-item" onClick={handleClick}>
-      <span className="nav-icon">{icon}</span>
-      <span className="nav-text">{text}</span>
+    <div className="nav-item">
+      < div className="nav-icon">{icon}</div>
+      <button onClick={handleClick} className='nav-text'>{text}</button>
     </div>
   );
 };

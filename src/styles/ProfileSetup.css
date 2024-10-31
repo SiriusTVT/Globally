@@ -1,0 +1,178 @@
+/* Contenedor principal */
+.ps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Formulario */
+.ps-form {
+    flex-direction: column;
+    background-color: white;
+    padding: 24px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ps-form .ps-title {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: var(--primary-color);
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ps-form .ps-subtitle {
+    margin: 0 0 24px;
+    color: var(--text-secondary);
+}
+
+/* Grupos de formulario */
+.ps-form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.ps-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.ps-form-group .ps-input {
+    width: 100%;
+    padding: 12px 16px;
+}
+/* Tags */
+.ps-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    min-height: 32px;
+}
+
+.ps-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--extra-color);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.ps-tag button {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 4px;
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 18px;
+}
+
+/* Botón de selección */
+.ps-select-button {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.ps-select-button:hover {
+    background-color: var(--text-secondary);
+}
+
+/* Dropdown */
+.ps-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--text-primary);
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.ps-dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ps-dropdown-item:hover {
+    background-color: var(--text-secondary);
+}
+
+/* Grupo de checkboxes */
+.ps-checkbox-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ps-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.ps-checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Botones */
+.ps-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.ps-button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+}
+
+.ps-button-primary:hover {
+    background-color: #4338CA;
+}
+
+.ps-button-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    border: 1px solid;
+    border-color: #D1D5DB;
+}
+
+.ps-button-secondary:hover {
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
+}

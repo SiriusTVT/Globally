@@ -6,10 +6,6 @@ import '../styles/Login.css';
 function Login() {
     const navigate = useNavigate();
     
-    useEffect(() => {
-        document.title = 'Globally - Inicio de Sesión';
-    }, []);
-
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -25,12 +21,10 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         navigate('/mainpage');
-        console.log(formData);
     };
 
     const handleBack = () => {
         navigate('/');
-        console.log('Botón de regresar presionado');
     };
 
     return (

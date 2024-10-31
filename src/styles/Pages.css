@@ -1,6 +1,8 @@
 .page-container {
     min-height: 100vh;
-    background-color: #f9fafb;
+    padding-top: 5rem;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
   
   .page-content {

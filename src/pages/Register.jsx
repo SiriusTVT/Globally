@@ -37,12 +37,11 @@ function Register() {
     }
     setError('');
     dispatch(addData(formData));
-    console.log('Datos del formulario:', formData);
+    navigate('/setup-perfil');
   };
 
   const handleBack = () => {
     navigate('/');
-    console.log('Botón de regresar presionado');
   };
 
   return (

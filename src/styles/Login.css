@@ -6,10 +6,9 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  position: absolute; /* Cambiado de fixed a absolute */
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: white; /* Añadido para asegurar que cubra el fondo */
 }
 
 /* Contenedor del formulario */
@@ -21,7 +20,7 @@
   align-items: center;
   padding: 20px;
   margin: 0;
-  background-color: var(--success-color);
+  background-color: var(--extra-color);
 }
 
 /* Contenedor de la imagen del lado derecho */
@@ -80,17 +79,6 @@
 .login-page-container .login-input {
   width: 100%;
   padding: 12px 16px;
-  border: 4px solid var(--primary-color);
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-}
-
-.login-page-container .login-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 .login-page-container .login-button-group {
@@ -105,12 +93,9 @@
   color: white;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+}
+.login-page-container .login-submit-btn:hover {
+  background-color: #4338CA;
 }
 
 .login-page-container .login-back-btn {
@@ -119,22 +104,8 @@
   padding: 12px 24px;
   border: 1px solid;
   border-color: #D1D5DB;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  width: 100%;
 }
 .login-page-container .login-back-btn:hover {
 background-color: #e2e3e6;
 border-color: #e2e3e6;
-}
-
-/* Estilos de validación */
-.login-page-container .login-input:invalid:not(:placeholder-shown) {
-border-color: var(--error-color);
-}
-
-.login-page-container .login-input:valid:not(:placeholder-shown) {
-border-color: var(--success-color);
 }
