@@ -33,6 +33,7 @@
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.2s;
+    border-radius: 16px;
   }
   
   .close-button:hover {
@@ -55,6 +56,7 @@
     border-radius: var(--border-radius);
     line-height: 1.5;
     animation: fadeIn 0.3s ease-in-out;
+    border-radius: 16px;
   }
   
   .message.me {
@@ -86,6 +88,7 @@
     border-radius: var(--border-radius);
     outline: none;
     transition: border-color 0.2s;
+    border-radius: 16px;
   }
   
   .text_input:focus {
@@ -100,6 +103,7 @@
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.2s;
+    border-radius: 16px;
   }
   
   .submit-button:hover {
@@ -126,6 +130,7 @@
       background-color: black;
       color: var(--text-color);
       cursor: pointer;
+      border-radius: 16px;
     }
     
     .language_select:focus {
