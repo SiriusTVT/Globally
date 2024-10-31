@@ -2,45 +2,40 @@ import React from 'react';
 import '../styles/PostLayout.css';
 
 const PostLayout = () => {
-  const mainPosts = {
-    category: "FEATURED",
-    title: "C'est ma vie",
-    subtitle: "La vie en France est très différente de celle au Canada. Ici, il fait toujours chaud. ",
-    author: "Por: Angélica Summer"
+  const mainPost = {
+    category: "VIAJES",
+    title: "Meu intercâmbio",
+    subtitle: "Eu adoro a Colômbia e adoro viver aquí. Penso que foi a melhor escolha para esse ano. E este website é maravilhoso!",
+    author: "Por Hernan A. Egydio",
+    image: "/images/HernanEgydio.jpg"
   };
-
-  const sidePosts = [
-    {
-      title: "Sustainable Living in Modern Cities",
-      subtitle: "Innovative approaches to urban environmental challenges",
-      author: "By Research Team",
-      category: "ENVIRONMENT"
-    },
-    {
-      title: "The Evolution of Remote Work",
-      subtitle: "Changing workplace dynamics in the digital age",
-      author: "By Future Team",
-      category: "WORKPLACE"
-    }
-  ];
 
   const leftPosts = [
     {
-      title: "Meu intercâmbio",
-      subtitle: "Eu adoro a Colômbia e adoro viver aquí. Penso que foi a melhor escolha para esse ano. E este website é maravilhoso!",
-      author: "Por Hernan A. Egydio",
-      image: "/images/HernanEgydio.jpg"
+      title: "C'est ma vie",
+      subtitle: "La vie en France est très différente de celle au Canada. Ici, il fait toujours chaud. ",
+      author: "Por: Angelica Summer",
+      image: "/images/AngelicaSummer.jpg"
     },
     {
-      title: "Global Food Security Initiatives",
-      subtitle: "New approaches to ensuring sustainable food supply",
-      author: "By Policy Team",
+      title: "Iniciativas de Seguridad Alimentaria",
+      subtitle: "Nuevos enfoques para garantizar el suministro de alimentos",
+      author: "Por Equipo de Políticas",
+      image: "/api/placeholder/400/300"
+    }
+  ];
+
+  const rightPosts = [
+    {
+      title: "Vida Sostenible en Ciudades Modernas",
+      subtitle: "Enfoques innovadores para desafíos ambientales urbanos",
+      author: "Por Equipo de Investigación",
       image: "/api/placeholder/400/300"
     },
     {
-      title: "Advances in Healthcare Technology",
-      subtitle: "How AI is revolutionizing medical diagnosis",
-      author: "By Health Team",
+      title: "La Evolución del Trabajo Remoto",
+      subtitle: "Cambios en la dinámica laboral en la era digital",
+      author: "Por Equipo Futuro",
       image: "/api/placeholder/400/300"
     }
   ];
@@ -48,65 +43,61 @@ const PostLayout = () => {
   return (
     <div className="posts-container">
       <div className="posts-grid">
-        {/* Left Column */}
+        {/* Izquierda*/}
         <div className="side-column">
-          {leftPosts.map((posts, index) => (
+          {leftPosts.map((post, index) => (
             <article key={index} className="article-card">
               <img 
-                src={posts.image} 
-                alt={`Thumbnail for ${posts.title}`} 
+                src={post.image}
+                alt={`Portada para ${post.title}`} 
                 className="thumbnail"
               />
               <h2 className="article-title">
-                <button className="article-button" aria-label={`Read article: ${posts.title}`}>
-                  {posts.title}
+                <button className="article-button" aria-label={`Leer artículo: ${post.title}`}>
+                  {post.title}
                 </button>
               </h2>
-              <p className="article-description">{posts.subtitle}</p>
-              <p className="article-author">{posts.author}</p>
+              <p className="article-description">{post.subtitle}</p>
+              <p className="article-author">{post.author}</p>
             </article>
           ))}
         </div>
 
-        {/* Center Column - Main Article */}
+        {/* Centro */}
         <article className="main-article">
           <img 
-            src="/images/JessicaSummer.jpg" 
-            alt="Main article cover" 
+            src={mainPost.image}
+            alt="Portada del artículo principal" 
             className="main-image"
           />
           <div>
-            <span className="category-tag">{mainPosts.category}</span>
+            <span className="category-tag">{mainPost.category}</span>
             <h1 className="main-title">
-              <button className="article-button" aria-label="Read main article">
-                {mainPosts.title}
+              <button className="article-button" aria-label="Leer artículo principal">
+                {mainPost.title}
               </button>
             </h1>
-            <p className="article-description">{mainPosts.subtitle}</p>
-            <p className="article-author">{mainPosts.author}</p>
+            <p className="article-description">{mainPost.subtitle}</p>
+            <p className="article-author">{mainPost.author}</p>
           </div>
         </article>
 
-        {/* Right Column */}
+        {/* Derecha */}
         <div className="side-column">
-          {sidePosts.map((posts, index) => (
+          {rightPosts.map((post, index) => (
             <article key={index} className="article-card">
               <img 
-                src="/api/placeholder/400/300" 
-                alt="Article thumbnail" 
+                src={post.image}
+                alt={`Portada para ${post.title}`} 
                 className="thumbnail"
               />
-              <span className="category-tag">{posts.category}</span>
               <h2 className="article-title">
-                <button 
-                  className="article-button" 
-                  aria-label={`Read article: ${posts.title}`}
-                >
-                  {posts.title}
+                <button className="article-button" aria-label={`Leer artículo: ${post.title}`}>
+                  {post.title}
                 </button>
               </h2>
-              <p className="article-description">{posts.subtitle}</p>
-              <p className="article-author">{posts.author}</p>
+              <p className="article-description">{post.subtitle}</p>
+              <p className="article-author">{post.author}</p>
             </article>
           ))}
         </div>
