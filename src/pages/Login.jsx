@@ -30,7 +30,6 @@ function Login() {
 
     const handleBack = () => {
         navigate('/');
-        console.log('Botón de regresar presionado');
     };
 
     return (

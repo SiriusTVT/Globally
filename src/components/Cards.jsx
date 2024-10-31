@@ -1,10 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Cards.css';
 
 const Cards = () => {
   const navigate = useNavigate();
-
+  
   const cards = [
     {
       title: 'Historias',
@@ -44,14 +43,14 @@ const Cards = () => {
     }
   ];
 
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="navigation-grid">
       {cards.map((card) => (
-        <button
-          key={card.title}
-          onClick={() => navigate(card.path)}
-          className="nav-card"
-        >
+        <div key={card.title} className="nav-card">
           <div className="nav-card-image">
             <img src={card.image} alt={card.title} />
           </div>
@@ -60,7 +59,13 @@ const Cards = () => {
             <p className="nav-card-description">{card.description}</p>
           </div>
           <div className="nav-card-overlay" />
-        </button>
+          <button 
+            onClick={() => handleNavigation(card.path)}
+            className="nav-card-button"
+          >
+            Ver más
+          </button>
+        </div>
       ))}
     </div>
   );
