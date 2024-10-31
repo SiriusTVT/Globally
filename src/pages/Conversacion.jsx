@@ -56,23 +56,14 @@ const Conversacion = () => {
     };
 
     return (
-        <div className="con-chat-container">
-            <div className="con-chat-header">
-                <button 
-                    className="con-close-button" 
-                    onClick={handleClose}
-                >
-                    Cerrar
-                </button>
+        <div className="chat-container">
+            <div className="chat-header">
+                <button className="close-button" onClick={handleClose}>Cerrar</button>
                 <h2>{chatName}</h2>
             </div>
-
-            <div className="con-messages-list">
+            <div className="messages-list">
                 {messages.map((message) => (
-                    <div 
-                        key={message.id} 
-                        className={`con-message ${message.sender}`}
-                    >
+                    <div key={message.id} className={`message ${message.sender}`}>
                         {message.text}
                     </div>
                 ))}
@@ -101,4 +92,5 @@ const Conversacion = () => {
         </div>
     );
 };
+
 export default Conversacion;
