@@ -21,13 +21,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.ps-form h1 {
+.ps-form .ps-title {
     margin: 0 0 8px;
     font-size: 24px;
     color: var(--primary-color);
+    justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
-.ps-form p {
+.ps-form .ps-subtitle {
     margin: 0 0 24px;
     color: var(--text-secondary);
 }
@@ -88,6 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .ps-select-button:hover {
@@ -107,6 +111,7 @@
     z-index: 1000;
     margin-top: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .ps-dropdown-item {
@@ -122,6 +127,7 @@
 /* Grupo de checkboxes */
 .ps-checkbox-group {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
 }

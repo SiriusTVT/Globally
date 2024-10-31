@@ -21,6 +21,10 @@
   --section-padding: 7rem 1rem;
   --section-gap: 2rem;
 }
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
 
 h1 {
   font-size: 3.2em;
