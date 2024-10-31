@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Historias= () => {
+const Destacados= () => {
   return (
     <div>
         <h1>PRUEBA4</h1>
@@ -9,4 +9,4 @@ const Historias= () => {
   );
 };
 
-export default Historias;
+export default Destacados;
