@@ -142,18 +142,3 @@
     box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
   }
   
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .pub-layout {
-      flex-direction: column;
-    }
-  
-    .pub-left-column,
-    .pub-right-column {
-      width: 100%;
-    }
-  
-    .pub-form-group textarea {
-      height: 400px;
-    }
-  }

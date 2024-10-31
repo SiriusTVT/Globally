@@ -15,6 +15,7 @@
 
 /* Formulario */
 .ps-form {
+    flex-direction: column;
     background-color: white;
     padding: 24px;
     border-radius: 30px;

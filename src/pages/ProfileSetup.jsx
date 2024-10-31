@@ -4,48 +4,58 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/ProfileSetup.css';
 
 function ProfileSetup() {
-    const registros = useSelector((state) => state.formulario.registros);
-    const nombreUsuario = registros.length > 0 ? registros[registros.length - 1].nombre : '';
-    const navigate = useNavigate();
-    const dropdownRef1 = useRef(null);
-    const dropdownRef2 = useRef(null);
-  
-    const idiomas = [
-        'Español', 'Inglés', 'Francés', 'Portugués', 'Alemán',
-        'Italiano', 'Ruso', 'Japonés'
-    ];
+  const registros = useSelector((state) => state.formulario.registros);
+  const nombreUsuario = registros.length > 0 ? registros[registros.length - 1].nombre : '';
+  const navigate = useNavigate();
+  const dropdownRef1 = useRef(null);
+  const dropdownRef2 = useRef(null);
+
+  const idiomas = [
+      'Español', 'Inglés', 'Francés', 'Portugués', 'Alemán',
+      'Italiano', 'Ruso', 'Japonés'
+  ];
 
   const [formData, setFormData] = useState({
-    nombre: '',
-    idiomasDominados: [],
-    idiomasInteres: [],
-    intereses: {
-      tecnologia: false,
-      deportes: false,
-      arte: false,
-      musica: false,
-      viajes: false
-    }
+      nombre: '',
+      idiomasDominados: [],
+      idiomasInteres: [],
+      intereses: {
+          tecnologia: false,
+          deportes: false,
+          arte: false,
+          musica: false,
+          viajes: false
+      }
   });
 
   const [dropdowns, setDropdowns] = useState({
-    dominados: false,
-    interes: false
+      dominados: false,
+      interes: false
   });
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!dropdownRef1.current?.contains(event.target)) {
-        setDropdowns(prev => ({ ...prev, dominados: false }));
-      }
-      if (!dropdownRef2.current?.contains(event.target)) {
-        setDropdowns(prev => ({ ...prev, interes: false }));
-      }
-    };
+      const handleClickOutside = (event) => {
+          if (!dropdownRef1.current?.contains(event.target)) {
+              setDropdowns(prev => ({ ...prev, dominados: false }));
+          }
+          if (!dropdownRef2.current?.contains(event.target)) {
+              setDropdowns(prev => ({ ...prev, interes: false }));
+          }
+      };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleSubmit = (e) => {
+      e.preventDefault();      
+      navigate('/mainpage');
+  };
+
+  const handleCancel = () => {
+      navigate('/register');
+  };
+
 
   const toggleDropdown = (dropdown) => {
     setDropdowns(prev => ({
@@ -72,7 +82,7 @@ function ProfileSetup() {
 
   return (
     <div className="ps-container">
-      <form className="ps-form">
+      <form className="ps-form" onSubmit={handleSubmit}>
             <h1 className="ps-title">¡Hola {nombreUsuario}!</h1>
             <p className="ps-subtitle">Vamos a realizar configuraciones para tu perfil</p>
         <div className="ps-form-group">
@@ -98,10 +108,8 @@ function ProfileSetup() {
               </span>
             ))}
           </div>
-          <button 
-            type="button" 
-            className="ps-select-button"
-            onClick={() => toggleDropdown('dominados')}
+          <button type="button" className="ps-select-button" 
+                  onClick={() => toggleDropdown('dominados')}
           >
             Seleccionar idiomas ▼
           </button>
@@ -181,8 +189,12 @@ function ProfileSetup() {
         </div>
 
         <div className="ps-buttons">
-          <button type="submit" className="ps-button-primary">Continuar</button>
-          <button type="button" className="ps-button-secondary" onClick={() => navigate('/')}>
+          <button type="submit" className="ps-button-primary">
+            Continuar
+          </button>
+          <button type="button" className="ps-button-secondary" 
+                  onClick={handleCancel}
+          >
             Cancelar
           </button>
         </div>

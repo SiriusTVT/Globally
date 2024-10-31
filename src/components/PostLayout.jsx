@@ -2,60 +2,68 @@ import React from 'react';
 import '../styles/PostLayout.css';
 
 const PostLayout = () => {
-  const mainNews = {
-    category: "COMMENTARY",
-    title: "TRUMP'S PLOT AGAINST AMERICA",
-    subtitle: "A leading historian looks back at Philip Roth's novel and how it perfectly predicts the rise of Trump and his willing collaborators",
-    author: "By SEAN WILENTZ"
+  const mainPosts = {
+    category: "FEATURED",
+    title: "C'est ma vie",
+    subtitle: "La vie en France est très différente de celle au Canada. Ici, il fait toujours chaud. ",
+    author: "Por: Angélica Summer"
   };
 
-  const sideNews = [
+  const sidePosts = [
     {
-      title: "CYNDI LAUPER STILL WANTS TO HAVE FUN",
-      subtitle: "Latest updates and news about the artist",
-      author: "By ROB SHEFFIELD",
-      category: "THE LAST WORD"
+      title: "Sustainable Living in Modern Cities",
+      subtitle: "Innovative approaches to urban environmental challenges",
+      author: "By Research Team",
+      category: "ENVIRONMENT"
     },
     {
-      title: "TERI GARR WAS A COMEDIC GENIUS AHEAD OF HER TIME",
-      subtitle: "A tribute to the legendary actress",
-      author: "By ALAN SEPINWALL",
-      category: "TRIBUTE"
+      title: "The Evolution of Remote Work",
+      subtitle: "Changing workplace dynamics in the digital age",
+      author: "By Future Team",
+      category: "WORKPLACE"
     }
   ];
 
-  const leftNews = [
+  const leftPosts = [
     {
-      title: "YSL Trial: Two More Defendants Take Plea Deals in Young Thug's RICO Case",
-      subtitle: "Young Thug is now on trial with only two other co-defendants",
-      author: "By NANCY DILLON"
+      title: "Meu intercâmbio",
+      subtitle: "Eu adoro a Colômbia e adoro viver aquí. Penso que foi a melhor escolha para esse ano. E este website é maravilhoso!",
+      author: "Por Hernan A. Egydio",
+      image: "/images/HernanEgydio.jpg"
     },
     {
-      title: "On 'Chromakopia,' Tyler, the Creator Has to Deal With the Truth",
-      subtitle: "His eighth studio album finds Tyler at the end of the line with his own mythology",
-      author: "By JEFF IHAZA"
+      title: "Global Food Security Initiatives",
+      subtitle: "New approaches to ensuring sustainable food supply",
+      author: "By Policy Team",
+      image: "/api/placeholder/400/300"
     },
     {
-      title: "Megan Thee Stallion Sues Tory Lanez Supporter for Cyberstalking, Deepfake Porn",
-      subtitle: "Suit accuses blogger Milagro Gramz of harassment and spreading falsehoods about the rapper for years",
-      author: "By MANKAPRR CONTEH"
+      title: "Advances in Healthcare Technology",
+      subtitle: "How AI is revolutionizing medical diagnosis",
+      author: "By Health Team",
+      image: "/api/placeholder/400/300"
     }
   ];
 
   return (
-    <div className="news-container">
-      <div className="news-grid">
+    <div className="posts-container">
+      <div className="posts-grid">
         {/* Left Column */}
         <div className="side-column">
-          {leftNews.map((news, index) => (
+          {leftPosts.map((posts, index) => (
             <article key={index} className="article-card">
+              <img 
+                src={posts.image} 
+                alt={`Thumbnail for ${posts.title}`} 
+                className="thumbnail"
+              />
               <h2 className="article-title">
-                <button className="article-button" aria-label={`Read article: ${news.title}`}>
-                  {news.title}
+                <button className="article-button" aria-label={`Read article: ${posts.title}`}>
+                  {posts.title}
                 </button>
               </h2>
-              <p className="article-description">{news.subtitle}</p>
-              <p className="article-author">{news.author}</p>
+              <p className="article-description">{posts.subtitle}</p>
+              <p className="article-author">{posts.author}</p>
             </article>
           ))}
         </div>
@@ -63,42 +71,42 @@ const PostLayout = () => {
         {/* Center Column - Main Article */}
         <article className="main-article">
           <img 
-            src="/api/placeholder/800/600" 
+            src="/images/JessicaSummer.jpg" 
             alt="Main article cover" 
             className="main-image"
           />
           <div>
-            <span className="category-tag">{mainNews.category}</span>
+            <span className="category-tag">{mainPosts.category}</span>
             <h1 className="main-title">
               <button className="article-button" aria-label="Read main article">
-                {mainNews.title}
+                {mainPosts.title}
               </button>
             </h1>
-            <p className="article-description">{mainNews.subtitle}</p>
-            <p className="article-author">{mainNews.author}</p>
+            <p className="article-description">{mainPosts.subtitle}</p>
+            <p className="article-author">{mainPosts.author}</p>
           </div>
         </article>
 
         {/* Right Column */}
         <div className="side-column">
-          {sideNews.map((news, index) => (
+          {sidePosts.map((posts, index) => (
             <article key={index} className="article-card">
               <img 
                 src="/api/placeholder/400/300" 
                 alt="Article thumbnail" 
                 className="thumbnail"
               />
-              <span className="category-tag">{news.category}</span>
+              <span className="category-tag">{posts.category}</span>
               <h2 className="article-title">
                 <button 
                   className="article-button" 
-                  aria-label={`Read article: ${news.title}`}
+                  aria-label={`Read article: ${posts.title}`}
                 >
-                  {news.title}
+                  {posts.title}
                 </button>
               </h2>
-              <p className="article-description">{news.subtitle}</p>
-              <p className="article-author">{news.author}</p>
+              <p className="article-description">{posts.subtitle}</p>
+              <p className="article-author">{posts.author}</p>
             </article>
           ))}
         </div>

@@ -6,10 +6,6 @@ import '../styles/Login.css';
 function Login() {
     const navigate = useNavigate();
     
-    useEffect(() => {
-        document.title = 'Globally - Inicio de Sesión';
-    }, []);
-
     const [formData, setFormData] = useState({
         email: '',
         password: '',
