@@ -15,7 +15,7 @@ const Chats = () => {
 
   const handleChatClick = (chat) => {
     console.log('Chat clicked:', chat);
-    navigate('/conversacion');
+    navigate('/conversacion', { state: { chatName: chat.nombre } });
   };
 
   const getInitial = (name) => {
