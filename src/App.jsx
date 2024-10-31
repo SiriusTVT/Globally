@@ -17,6 +17,7 @@ import Posts from './pages/Posts';
 import RecentPosts from './pages/RecentPosts';
 import Profile from './pages/Profile';
 import ProfileSetup from './pages/ProfileSetup';
+import Conversacion from './pages/Conversacion';
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/recientes" element={<RecentPosts />} />
         <Route path="/perfil" element={<Profile />} />
         <Route path="/setup-perfil" element={<ProfileSetup />} />
+        <Route path="/conversacion" element={<Conversacion />} />
       </Routes>
     </main>
   );

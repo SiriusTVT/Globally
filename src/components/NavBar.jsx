@@ -10,7 +10,6 @@ const NavBar = () => {
     { id: 4, text: 'Chats', icon: '💬', path: '/chats' },
     { id: 5, text: 'Perfil', icon: '👤', path: '/perfil' },
     { id: 6, text: 'Cerrar Sesión', icon: '⬅️', path: '/' }
-
   ];
 
   return (
