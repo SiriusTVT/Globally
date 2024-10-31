@@ -79,7 +79,7 @@ const Conversacion = () => {
             </div>
             <form onSubmit={handleSendMessage}>
                 <input
-                    className="text_input"
+                    className="con-text-input"
                     type="text"
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
@@ -96,7 +96,7 @@ const Conversacion = () => {
                     <option value="de">Alemán</option>
                     {/* Agrega más opciones según sea necesario */}
                 </select>
-                <button className="submit-button" type="submit">Enviar</button>
+                <button className="con-submit-button" type="submit">Enviar</button>
             </form>
         </div>
     );
