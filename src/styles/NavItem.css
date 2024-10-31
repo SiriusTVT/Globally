@@ -5,19 +5,19 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-.nav-item:hover {
-    background-color: #f3f4f6;
-  }
-  
+    transition: all 0.2s ease;    
+} 
 .nav-icon {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
-
 .nav-text {
+  background-color: white;
   font-size: 1rem;
   font-weight: 500;
   color: #4b5563;
+  border: 1px solid;
+  border-color: white;
+}
+.nav-text:hover {
+  background-color: #f3f4f6;
 }

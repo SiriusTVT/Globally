@@ -20,7 +20,7 @@
   align-items: center;
   padding: 20px;
   margin: 0;
-  background-color: var(--success-color);
+  background-color: var(--extra-color);
 }
 
 /* Contenedor de la imagen del lado derecho */

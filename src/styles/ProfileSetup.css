@@ -1,15 +1,23 @@
 /* Contenedor principal */
 .ps-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Formulario */
 .ps-form {
     background-color: white;
     padding: 24px;
-    border-radius: 8px;
+    border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,19 +44,10 @@
     font-weight: 500;
 }
 
-.ps-form-group input[type="text"] {
+.ps-form-group .ps-input {
     width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 12px 16px;
 }
-
-.ps-form-group input[type="text"]:focus {
-    outline: none;
-    border-color: #2196f3;
-}
-
 /* Tags */
 .ps-tags {
     display: flex;
@@ -61,17 +60,17 @@
 .ps-tag {
     display: inline-flex;
     align-items: center;
-    background-color: #e3f2fd;
+    background-color: var(--extra-color);
     padding: 4px 12px;
     border-radius: 16px;
     font-size: 14px;
-    color: #1976d2;
+    color: var(--text-primary);
 }
 
 .ps-tag button {
     background: none;
     border: none;
-    color: #1976d2;
+    color: rgb(0, 0, 0);
     margin-left: 4px;
     cursor: pointer;
     padding: 0 4px;
@@ -82,19 +81,17 @@
 .ps-select-button {
     width: 100%;
     padding: 8px 12px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background-color: var(--text-primary);
     text-align: left;
     cursor: pointer;
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .ps-select-button:hover {
-    background-color: #f5f5f5;
+    background-color: var(--text-secondary);
 }
 
 /* Dropdown */
@@ -104,7 +101,6 @@
     left: 0;
     right: 0;
     background-color: var(--text-primary);
-    border: 1px solid #ddd;
     border-radius: 4px;
     max-height: 200px;
     overflow-y: auto;
@@ -120,12 +116,7 @@
 }
 
 .ps-dropdown-item:hover {
-    background-color: #f5f5f5;
-}
-
-.ps-dropdown-item.selected {
-    background-color: #e3f2fd;
-    color: #1976d2;
+    background-color: var(--text-secondary);
 }
 
 /* Grupo de checkboxes */
@@ -150,44 +141,31 @@
 /* Botones */
 .ps-buttons {
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 12px;
 }
 
 .ps-button-primary {
-    padding: 8px 16px;
-    background-color: #1976d2;
+    background-color: var(--primary-color);
     color: white;
+    padding: 12px 24px;
+    border: none;
 }
 
 .ps-button-primary:hover {
-    background-color: #1565c0;
+    background-color: #4338CA;
 }
 
 .ps-button-secondary {
-    padding: 8px 16px;
-    background-color: white;
-    color: #333;
+    background-color: transparent;
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    border: 1px solid;
+    border-color: #D1D5DB;
 }
 
 .ps-button-secondary:hover {
-    background-color: #f5f5f5;
-}
-
-/* Scrollbar personalizado para el dropdown */
-.ps-dropdown::-webkit-scrollbar {
-    width: 8px;
-}
-
-.ps-dropdown::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.ps-dropdown::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-.ps-dropdown::-webkit-scrollbar-thumb:hover {
-    background: #666;
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
 }

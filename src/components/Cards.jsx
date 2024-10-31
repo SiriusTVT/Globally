@@ -7,32 +7,32 @@ const Cards = () => {
   
   const cards = [
     {
-      title: 'Historias',
-      description: 'Explora historias inspiradoras de nuestra comunidad',
-      path: '/historias',
+      title: 'Destacados',
+      description: 'Descubre las historias que más encantaron a la comunidad',
+      path: '/destacados',
       image: '/images/historias.png'
     },
     {
-      title: 'Publicaciones Recientes',
-      description: 'Descubre las últimas actualizaciones y contenido nuevo',
+      title: 'Publicaciones de Amigos',
+      description: 'Sigue el progeso de tus amigos y lee sus últimas historias',
       path: '/recientes',
       image: '/images/publicacionesRecientes.png'
     },
     {
       title: 'Mis Favoritos',
-      description: 'Accede a tu colección personal de contenidos guardados',
+      description: 'Tu colección personal de historias. Guarda publicaciones para practicar y mejorar tus idiomas preferidos',
       path: '/favoritos',
       image: '/images/favoritos.png'
     },
     {
       title: 'Mis Publicaciones',
-      description: 'Gestiona y revisa todas tus publicaciones en un solo lugar',
+      description: 'Tu espacio creativo: revisa y gestiona las historias que has compartido',
       path: '/mis-publicaciones',
       image: '/images/misPublicaciones.png'
     },
     {
       title: 'Publicar',
-      description: 'Comparte tu historia y experiencias con nuestra comunidad',
+      description: '¿Listo para compartir tu voz? Escribe y comparte historias en los idiomas que dominas. !Ayuda a otros a aprender¡',
       path: '/publicar',
       image: '/images/upload.png'
     },

@@ -79,6 +79,10 @@ function ProfileSetup() {
           <label>Nombre de Usuario</label>
           <input
             type="text"
+            required
+            className="ps-input"
+            autoComplete="name"
+            placeholder='Nombre Único como ID'
             value={formData.nombre}
             onChange={(e) => setFormData(prev => ({ ...prev, nombre: e.target.value }))}
           />
