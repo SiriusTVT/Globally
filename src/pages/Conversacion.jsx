@@ -85,6 +85,8 @@ const Conversacion = () => {
                     <option value="en">Inglés</option>
                     <option value="fr">Francés</option>
                     <option value="de">Alemán</option>
+                    <option value="pt">Portugués</option>
+                    
                     {/* Agrega más opciones según sea necesario */}
                 </select>
                 <button className="submit-button" type="submit">Enviar</button>
