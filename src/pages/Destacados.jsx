@@ -1,10 +1,13 @@
 import React from 'react';
-
+import PostLayout from '../components/PostLayout';
+import NavBar from '../components/NavBar';
+import '../styles/Pages.css';
 
 const Destacados= () => {
   return (
-    <div>
-        <h1>PRUEBA4</h1>
+    <div className="page-container">
+      <NavBar />
+      <PostLayout />
     </div>
   );
 };
