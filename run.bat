@@ -13,6 +13,22 @@ if errorlevel 1 (
     echo Python 3.8 ya está instalado, omitiendo instalación.
 )
 
+:: Verifica si pip está instalado para Python 3.8
+echo Verificando si pip está instalado...
+py -3.8 -m pip --version >nul 2>&1
+if errorlevel 1 (
+    echo pip no está instalado. Instalando pip...
+    :: Descarga get-pip.py
+    curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
+    :: Instala pip
+    py -3.8 get-pip.py
+    :: Limpia el archivo temporal
+    del get-pip.py
+    echo pip instalado correctamente.
+) else (
+    echo pip ya está instalado, omitiendo instalación.
+)
+
 echo Instalando los requerimientos previos de LibreTranslate...
 py -3.8 -m pip install libretranslate
 
