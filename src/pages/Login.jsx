@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Login.css';
 
 function Login() {
@@ -11,6 +12,8 @@ function Login() {
         password: '',
     });
 
+    const [errorMessage, setErrorMessage] = useState('');
+
     const handleInputChange = (event) => {
         setFormData({
             ...formData,
@@ -18,9 +21,17 @@ function Login() {
         });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        navigate('/mainpage');
+        try {
+            const response = await axios.post('/api/login', formData);
+            if (response.status === 200) {
+                navigate('/mainpage');
+            }
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            setErrorMessage(error.response?.data?.error || 'Error al iniciar sesión');
+        }
     };
 
     const handleBack = () => {
@@ -34,6 +45,7 @@ function Login() {
                     <h1 className="login-title">Inicio de Sesión</h1>
                     
                     <form onSubmit={handleSubmit} className="login-form">
+                        {errorMessage && <p className="error-message">{errorMessage}</p>}
                         <div className="login-form-group">
                             <label>Email:</label>
                             <input

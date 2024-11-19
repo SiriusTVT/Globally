@@ -57,6 +57,24 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
+// Ruta para iniciar sesión
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ error: 'No se encontró una cuenta con el correo asociado' });
+    }
+    if (user.password !== password) {
+      return res.status(400).json({ error: 'Correo o contraseña incorrectos' });
+    }
+    res.status(200).json({ message: 'Inicio de sesión exitoso' });
+  } catch (error) {
+    console.error('Error al iniciar sesión:', error);
+    res.status(500).json({ error: 'Error al iniciar sesión' });
+  }
+});
+
 // Ruta para configurar el perfil del usuario
 app.post('/api/profile-setup', async (req, res) => {
   try {
