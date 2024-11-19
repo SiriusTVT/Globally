@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { exec } from 'child_process'; // Importa el módulo para ejecutar comandos del sistema
 import mongoose from 'mongoose'; // Importa Mongoose para manejar la conexión con MongoDB
+import User from './models/User.js'; // Importa el modelo de usuario
 
 const app = express();
 
@@ -38,6 +39,38 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // Ejemplo de ruta para probar la conexión (puedes eliminarla después)
 app.get('/api/test', (req, res) => {
   res.json({ message: 'API funcionando correctamente' });
+});
+
+// Ruta para registrar un nuevo usuario
+app.post('/api/register', async (req, res) => {
+  try {
+    const { nombre, email, password } = req.body;
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: 'El correo ya está registrado' });
+    }
+    const newUser = new User({ nombre, email, password });
+    await newUser.save();
+    res.status(201).json({ message: 'Usuario registrado exitosamente' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al registrar el usuario' });
+  }
+});
+
+// Ruta para configurar el perfil del usuario
+app.post('/api/profile-setup', async (req, res) => {
+  try {
+    const { email, nombre, idiomasDominados, idiomasInteres, intereses } = req.body;
+    const user = await User.findOneAndUpdate(
+      { email },
+      { nombre, idiomasDominados, idiomasInteres, intereses },
+      { new: true, upsert: true } // Crea el documento si no existe
+    );
+    res.status(200).json({ message: 'Perfil actualizado exitosamente' });
+  } catch (error) {
+    console.error('Error al actualizar el perfil:', error);
+    res.status(500).json({ error: 'Error al actualizar el perfil' });
+  }
 });
 
 // Maneja todas las rutas y devuelve el archivo index.html

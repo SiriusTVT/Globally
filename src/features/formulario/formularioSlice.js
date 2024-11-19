@@ -1,18 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    registros: []
+  registros: []
 };
 
-export const formularioSlice = createSlice({
-    name:'formulario',
-    initialState,
-    reducers:{
-        addData: (state, action) => {
-            state.registros.push(action.payload);
-        }
+const formularioSlice = createSlice({
+  name: 'formulario',
+  initialState,
+  reducers: {
+    addData: (state, action) => {
+      state.registros.push(action.payload);
     }
-})
+  }
+});
 
-export const {addData} = formularioSlice.actions;
-export default formularioSlice.reducer
+export const { addData } = formularioSlice.actions;
+
+export default formularioSlice.reducer;

@@ -6,6 +6,7 @@ import '../styles/ProfileSetup.css';
 function ProfileSetup() {
   const registros = useSelector((state) => state.formulario.registros);
   const nombreUsuario = registros.length > 0 ? registros[registros.length - 1].nombre : '';
+  const emailUsuario = registros.length > 0 ? registros[registros.length - 1].email : '';
   const navigate = useNavigate();
   const dropdownRef1 = useRef(null);
   const dropdownRef2 = useRef(null);
@@ -47,15 +48,39 @@ function ProfileSetup() {
       return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSubmit = (e) => {
-      e.preventDefault();      
-      navigate('/mainpage');
+  useEffect(() => {
+    console.log('Registros:', registros);
+  }, [registros]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!emailUsuario) {
+      console.error('No se encontró el email del usuario');
+      return;
+    }
+    try {
+      const response = await fetch('/api/profile-setup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email: emailUsuario, // Asegúrate de que el email se pase correctamente
+          ...formData 
+        })
+      });
+      if (response.ok) {
+        navigate('/mainpage');
+      } else {
+        const data = await response.json();
+        console.error(data.error || 'Error al actualizar el perfil');
+      }
+    } catch (error) {
+      console.error('Error al actualizar el perfil:', error);
+    }
   };
 
   const handleCancel = () => {
       navigate('/register');
   };
-
 
   const toggleDropdown = (dropdown) => {
     setDropdowns(prev => ({
@@ -77,6 +102,16 @@ function ProfileSetup() {
     setFormData(prev => ({
       ...prev,
       [field]: prev[field].filter(i => i !== item)
+    }));
+  };
+
+  const handleCheckboxChange = (key) => {
+    setFormData(prev => ({
+      ...prev,
+      intereses: {
+        ...prev.intereses,
+        [key]: !prev.intereses[key]
+      }
     }));
   };
 
@@ -174,13 +209,7 @@ function ProfileSetup() {
                 <input
                   type="checkbox"
                   checked={formData.intereses[key]}
-                  onChange={() => setFormData(prev => ({
-                    ...prev,
-                    intereses: {
-                      ...prev.intereses,
-                      [key]: !prev.intereses[key]
-                    }
-                  }))}
+                  onChange={() => handleCheckboxChange(key)}
                 />
                 {label}
               </label>

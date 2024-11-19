@@ -29,15 +29,29 @@ function Register() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
       return;
     }
     setError('');
-    dispatch(addData(formData));
-    navigate('/setup-perfil');
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        dispatch(addData(formData)); // Guarda los datos en el estado de Redux
+        navigate('/setup-perfil');
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Error al registrar el usuario');
+      }
+    } catch (error) {
+      setError('Error al registrar el usuario');
+    }
   };
 
   const handleBack = () => {
