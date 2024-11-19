@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { exec } from 'child_process'; // Importa el módulo para ejecutar comandos del sistema
+import mongoose from 'mongoose'; // Importa Mongoose para manejar la conexión con MongoDB
 
 const app = express();
 
@@ -22,8 +23,22 @@ exec('cmd /c start run.bat', (error, stdout, stderr) => {
   console.log(`Salida del script batch: ${stdout}`);
 });
 
+// Conexión a MongoDB
+mongoose
+  .connect('mongodb://localhost:27017/Globally')
+  .then(() => console.log('Conectado a MongoDB en la base de datos Globally'))
+  .catch((err) => console.error('Error al conectar a MongoDB:', err));
+
+// Middleware para manejar JSON
+app.use(express.json());
+
 // Sirve los archivos estáticos desde la carpeta 'dist'
 app.use(express.static(path.join(__dirname, 'dist')));
+
+// Ejemplo de ruta para probar la conexión (puedes eliminarla después)
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API funcionando correctamente' });
+});
 
 // Maneja todas las rutas y devuelve el archivo index.html
 app.get('*', (req, res) => {
