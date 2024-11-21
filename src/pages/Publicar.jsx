@@ -56,10 +56,11 @@ const PostForm = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      const imageUrl = URL.createObjectURL(file);
       setFormData(prevState => ({
         ...prevState,
         image: file,
-        imagePreview: URL.createObjectURL(file)
+        imagePreview: imageUrl
       }));
     }
   };

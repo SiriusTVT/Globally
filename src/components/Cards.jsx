@@ -41,6 +41,12 @@ const Cards = () => {
       description: 'Administra tu información personal y preferencias de cuenta',
       path: '/perfil',
       image: '/images/perfil.png'
+    },
+    {
+      title: 'Publicaciones',
+      description: 'Explora las últimas publicaciones de la comunidad',
+      path: '/posts',
+      image: '/images/Publicaciones.jpg'
     }
   ];
 

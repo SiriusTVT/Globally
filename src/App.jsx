@@ -19,6 +19,7 @@ import ProfileSetup from './pages/ProfileSetup';
 import Conversacion from './pages/Conversacion';
 import Destacados from './pages/Destacados';
 import AppLayout from './components/AppLayout';
+import Post from './pages/Posts';
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/perfil" element={<Profile />} />
           <Route path="/setup-perfil" element={<ProfileSetup />} />
           <Route path="/conversacion" element={<Conversacion />} />
+          <Route path="/posts" element={<Post />} />
         </Route>
       </Routes>
     </main>

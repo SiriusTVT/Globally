@@ -1,0 +1,40 @@
+.posts-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #e0e0e0; /* Cambiar el color de fondo */
+}
+
+.post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #ffffff; /* Cambiar el color de fondo */
+    color: #333333; /* Cambiar el color del texto */
+}
+
+.post h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #000000; /* Cambiar el color del texto a negro */
+}
+
+.post h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #444444; /* Cambiar el color del texto */
+}
+
+.post p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+    color: #555555; /* Cambiar el color del texto */
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
