@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 function AppLayout() {
     const location = useLocation();

@@ -10,6 +10,7 @@ import multer from 'multer';
 import fs from 'fs';
 import Post from './models/Post.js';
 
+
 // Configuración inicial
 const app = express();
 dotenv.config();
