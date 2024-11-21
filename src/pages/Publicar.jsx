@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import '../styles/Publicar.css';
 import { useNavigate } from 'react-router-dom';
+import { isAuthenticated, userId } from '../utils/auth';
 import axios from 'axios';
 
 const languageOptions = [

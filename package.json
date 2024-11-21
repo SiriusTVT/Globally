@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "auth-library": "^0.0.1",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "child_process": "^1.0.2",
