@@ -35,10 +35,7 @@ exec('cmd /c start run.bat', (error, stdout, stderr) => {
 
 // Conexión a MongoDB Atlas
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('Conectado a MongoDB Atlas'))
   .catch((err) => console.error('Error al conectar a MongoDB:', err));
 
