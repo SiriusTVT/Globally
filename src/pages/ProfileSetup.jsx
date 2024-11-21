@@ -26,7 +26,9 @@ function ProfileSetup() {
           arte: false,
           musica: false,
           viajes: false
-      }
+      },
+      profilePicture: null,
+      profilePicturePreview: null
   });
 
   const [dropdowns, setDropdowns] = useState({
@@ -52,20 +54,36 @@ function ProfileSetup() {
     console.log('Registros:', registros);
   }, [registros]);
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setFormData(prev => ({ ...prev, profilePicture: file, profilePicturePreview: reader.result }));
+        };
+        reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!emailUsuario) {
       console.error('No se encontró el email del usuario');
       return;
     }
+    const formDataToSend = new FormData();
+    formDataToSend.append('email', emailUsuario);
+    formDataToSend.append('nombre', formData.nombre);
+    formDataToSend.append('idiomasDominados', JSON.stringify(formData.idiomasDominados));
+    formDataToSend.append('idiomasInteres', JSON.stringify(formData.idiomasInteres));
+    formDataToSend.append('intereses', JSON.stringify(formData.intereses));
+    if (formData.profilePicture) {
+      formDataToSend.append('profilePicture', formData.profilePicture);
+    }
     try {
       const response = await fetch('/api/profile-setup', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          email: emailUsuario, 
-          ...formData 
-        })
+        body: formDataToSend
       });
       if (response.ok) {
         navigate('/mainpage');
@@ -215,6 +233,21 @@ function ProfileSetup() {
               </label>
             ))}
           </div>
+        </div>
+
+        <div className="ps-form-group">
+          <label>Foto de Perfil</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="ps-file-input"
+          />
+          {formData.profilePicturePreview && (
+            <div className="ps-image-preview">
+                <img src={formData.profilePicturePreview} alt="Vista previa de la imagen" />
+            </div>
+          )}
         </div>
 
         <div className="ps-buttons">

@@ -1,4 +1,3 @@
-
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
@@ -13,7 +12,8 @@ const userSchema = new mongoose.Schema({
     arte: { type: Boolean, default: false },
     musica: { type: Boolean, default: false },
     viajes: { type: Boolean, default: false }
-  }
+  },
+  profilePicture: { type: String, default: null }
 });
 
 const User = mongoose.model('User', userSchema);
