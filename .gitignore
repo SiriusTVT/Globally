@@ -1,6 +1,7 @@
 # Logs
 .exe
 .rar
+.env
 logs
 *.log
 npm-debug.log*
