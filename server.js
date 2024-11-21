@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 import cors from 'cors'; // Importamos cors para permitir peticiones cruzadas
 import User from './models/User.js';
 import dotenv from 'dotenv';
+import multer from 'multer';
+import fs from 'fs';
 
 // Configuración inicial
 const app = express();
@@ -14,6 +16,12 @@ dotenv.config();
 // Configuración de __dirname para ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Crear el directorio 'uploads' si no existe
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
 
 // Middleware
 app.use(express.json());
@@ -98,19 +106,31 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = multer({ storage });
+
 // Ruta para configuración de perfil
-app.post('/api/profile-setup', async (req, res) => {
+app.post('/api/profile-setup', upload.single('profilePicture'), async (req, res) => {
   try {
     const { email, nombre, idiomasDominados, idiomasInteres, intereses } = req.body;
-    
+    const profilePicture = req.file ? req.file.path : null;
+
     const updatedUser = await User.findOneAndUpdate(
       { email },
       { 
         nombre, 
-        idiomasDominados, 
-        idiomasInteres, 
-        intereses,
-        perfilCompletado: true // Marcamos que el perfil está completo
+        idiomasDominados: JSON.parse(idiomasDominados), 
+        idiomasInteres: JSON.parse(idiomasInteres), 
+        intereses: JSON.parse(intereses),
+        perfilCompletado: true,
+        profilePicture
       },
       { new: true }
     );
