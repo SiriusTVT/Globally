@@ -1,72 +1,50 @@
 // Profile.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar'; 
+import axios from 'axios';
 import '../styles/Profile.css';
 
 const Profile = () => {
-  // Estado para almacenar y actualizar los datos del perfil
-  const [profile, setProfile] = useState({
-    name: 'Nombre de Usuario',
-    description: 'Descripción breve sobre ti',
-    photo: '' // URL o imagen en blanco
-  });
+  const [profileData, setProfileData] = useState(null);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      [name]: value
-    }));
-  };
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await axios.get('/api/profile');
+        setProfileData(response.data);
+      } catch (error) {
+        console.error('Error fetching profile data:', error.response || error.message || error);
+      }
+    };
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfile((prevProfile) => ({
-          ...prevProfile,
-          photo: reader.result
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+    fetchProfileData();
+  }, []);
 
   return (
     <div>
-      {/* Barra de navegación */}
       <NavBar />
-
-      {/* Contenido del perfil */}
       <div className="profile-container">
-        <h2>Perfil</h2>
-        <div className="profile-photo">
-          <img 
-            src={profile.photo || 'https://via.placeholder.com/150'} 
-            alt="Foto de perfil" 
-          />
-          <input type="file" onChange={handlePhotoChange} />
-        </div>
-        <div className="profile-info">
-          <label>
-            Nombre:
-            <input
-              type="text"
-              name="name"
-              value={profile.name}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Descripción:
-            <textarea
-              name="description"
-              value={profile.description}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
+        {profileData ? (
+          <>
+            <div className="profile-photo">
+              <img src={profileData.profilePicture} alt="Profile" />
+            </div>
+            <div className="profile-info">
+              <label>Nombre:</label>
+              <input type="text" value={profileData.nombre} readOnly />
+              <label>Email:</label>
+              <input type="email" value={profileData.email} readOnly />
+              <label>Idiomas Dominados:</label>
+              <textarea value={profileData.idiomasDominados.join(', ')} readOnly />
+              <label>Idiomas de Interés:</label>
+              <textarea value={profileData.idiomasInteres.join(', ')} readOnly />
+              <label>Intereses:</label>
+              <textarea value={profileData.intereses.join(', ')} readOnly />
+            </div>
+          </>
+        ) : (
+          <p>Cargando datos del perfil...</p>
+        )}
       </div>
     </div>
   );

@@ -169,33 +169,22 @@ app.post('/api/profile-setup', upload.single('profilePicture'), async (req, res)
   }
 });
 
-// Ruta para crear posts
-app.post('/api/posts/create', upload.single('image'), async (req, res) => {
+// Ruta para obtener datos del perfil
+app.get('/api/profile', async (req, res) => {
   try {
-    const { title, subtitle, content, language, level, userId } = req.body;
-    
-    const post = new Post({
-      userId,
-      title,
-      subtitle,
-      content,
-      language,
-      level,
-      imagePath: req.file ? `/uploads/${req.file.filename}` : null
-    });
+    const email = req.query.email; // Suponiendo que el email se pasa como query param
+    const user = await User.findOne({ email });
 
-    await post.save();
+    if (!user) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
 
-    res.status(201).json({
-      message: 'Post creado exitosamente',
-      post
-    });
+    res.status(200).json(user);
   } catch (error) {
-    console.error('Error al crear el post:', error);
-    res.status(500).json({ error: 'Error al crear el post' });
+    console.error('Error al obtener datos del perfil:', error);
+    res.status(500).json({ error: 'Error al obtener datos del perfil' });
   }
 });
-
 
 // Ruta catch-all para SPA
 app.get('*', (req, res) => {
