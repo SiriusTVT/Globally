@@ -63,7 +63,7 @@ function ProfileSetup() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          email: emailUsuario, // Asegúrate de que el email se pase correctamente
+          email: emailUsuario, 
           ...formData 
         })
       });

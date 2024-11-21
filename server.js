@@ -83,13 +83,11 @@ app.post('/api/login', async (req, res) => {
         error: 'No se encontró una cuenta con el correo asociado' 
       });
     }
-    
     if (user.password !== password) {
       return res.status(400).json({ 
         error: 'Correo o contraseña incorrectos' 
       });
     }
-
     res.status(200).json({ 
       message: 'Inicio de sesión exitoso',
       userId: user._id,
@@ -106,6 +104,19 @@ app.post('/api/profile-setup', async (req, res) => {
   try {
     const { email, nombre, idiomasDominados, idiomasInteres, intereses } = req.body;
     
+    // Verificar si el nombre ya existe (excluyendo al usuario actual)
+    const existingUserWithName = await User.findOne({
+      nombre: nombre,
+      email: { $ne: email } // Excluye al usuario actual de la búsqueda
+    });
+
+    if (existingUserWithName) {
+      return res.status(400).json({
+        error: 'El nombre de usuario ya está en uso'
+      });
+    }
+
+    // Si el nombre no existe, actualizar el usuario
     const updatedUser = await User.findOneAndUpdate(
       { email },
       { 
@@ -113,7 +124,7 @@ app.post('/api/profile-setup', async (req, res) => {
         idiomasDominados, 
         idiomasInteres, 
         intereses,
-        perfilCompletado: true // Marcamos que el perfil está completo
+        perfilCompletado: true
       },
       { new: true }
     );
