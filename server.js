@@ -175,7 +175,7 @@ app.post('/api/profile-setup', upload.single('profilePicture'), async (req, res)
 app.post('/api/posts/create', upload.single('image'), async (req, res) => {
   try {
     const { title, subtitle, content, language, level, userId } = req.body;
-    const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+    const imagePath = req.file ? `uploads/${req.file.filename}` : null;
 
     // Verificar que todos los campos requeridos estén presentes
     if (!title || !content || !language || !level || !userId) {

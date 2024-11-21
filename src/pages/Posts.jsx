@@ -27,7 +27,7 @@ const Posts = () => {
           <h3>{post.subtitle}</h3>
           <p>{post.content}</p>
           <p>{post.language} - {post.level}</p>
-          {post.imagePath && <img src={`/${post.imagePath}`} alt={post.title} className="post-image" />}
+          {post.imagePath && <img src={`http://localhost:5000/${post.imagePath}`} alt={post.title} className="post-image" />}
         </div>
       ))}
     </div>

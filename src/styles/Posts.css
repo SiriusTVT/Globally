@@ -38,3 +38,8 @@
     margin-top: 10px;
     border-radius: 5px;
 }
+
+.posts-container h1 {
+    font-size: 28px;
+    color: #000000; /* Color negro */
+}
