@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/Posts.css';
+import NavBar from '../components/NavBar'; // Import NavBar component
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -19,17 +20,20 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className="posts-container">
-      <h1>Publicaciones</h1>
-      {posts.map(post => (
-        <div key={post._id} className="post">
-          <h2>{post.title}</h2>
-          <h3>{post.subtitle}</h3>
-          <p>{post.content}</p>
-          <p>{post.language} - {post.level}</p>
-          {post.imagePath && <img src={`http://localhost:5000/${post.imagePath}`} alt={post.title} className="post-image" />}
-        </div>
-      ))}
+    <div>
+      <NavBar /> {/* Add NavBar component */}
+      <div className="posts-container">
+        <h1>Publicaciones</h1>
+        {posts.map(post => (
+          <div key={post._id} className="post">
+            <h2>{post.title}</h2>
+            <h3>{post.subtitle}</h3>
+            <p>{post.content}</p>
+            <p>{post.language} - {post.level}</p>
+            {post.imagePath && <img src={`http://localhost:5000/${post.imagePath}`} alt={post.title} className="post-image" />}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

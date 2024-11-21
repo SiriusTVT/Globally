@@ -4,6 +4,7 @@ import '../styles/Publicar.css';
 import { useNavigate } from 'react-router-dom';
 import { isAuthenticated, userId } from '../utils/auth';
 import axios from 'axios';
+import NavBar from '../components/NavBar'; // Import NavBar component
 
 const languageOptions = [
   { value: 'es', label: 'Español' },
@@ -150,134 +151,137 @@ const PostForm = () => {
   };
 
   return (
-    <div className="pub-form-container">
-      <form onSubmit={handleSubmit}>
-        <div className="pub-layout">
-          {/* Columna Izquierda */}
-          <div className="pub-left-column">
-            <div className="pub-form-group">
-              <label htmlFor="image">Imagen de portada</label>
-              <div className="pub-image-upload-area">
-                <input
-                  type="file"
-                  id="image"
-                  name="image"
-                  onChange={handleImageChange}
-                  accept="image/*"
-                  className="pub-file-input"
-                />
-                {formData.imagePreview ? (
-                  <img
-                    src={formData.imagePreview}
-                    alt="Vista previa"
-                    className="pub-image-preview"
+    <div>
+      <NavBar /> {/* Add NavBar component */}
+      <div className="pub-form-container">
+        <form onSubmit={handleSubmit}>
+          <div className="pub-layout">
+            {/* Columna Izquierda */}
+            <div className="pub-left-column">
+              <div className="pub-form-group">
+                <label htmlFor="image">Imagen de portada</label>
+                <div className="pub-image-upload-area">
+                  <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    onChange={handleImageChange}
+                    accept="image/*"
+                    className="pub-file-input"
                   />
-                ) : (
-                  <div className="pub-image-placeholder">
-                    Haz clic o arrastra una imagen aquí
-                  </div>
-                )}
+                  {formData.imagePreview ? (
+                    <img
+                      src={formData.imagePreview}
+                      alt="Vista previa"
+                      className="pub-image-preview"
+                    />
+                  ) : (
+                    <div className="pub-image-placeholder">
+                      Haz clic o arrastra una imagen aquí
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="pub-form-group">
+                <label htmlFor="title">Título</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Ingresa el título"
+                />
+              </div>
+
+              <div className="pub-form-group">
+                <label htmlFor="subtitle">Subtítulo</label>
+                <input
+                  type="text"
+                  id="subtitle"
+                  name="subtitle"
+                  value={formData.subtitle}
+                  onChange={handleInputChange}
+                  placeholder="Ingresa el subtítulo"
+                />
+              </div>
+
+              <div className="pub-form-group">
+                <label htmlFor="language">Idioma</label>
+                <select
+                  id="language"
+                  name="language"
+                  value={formData.language}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="">Seleccionar idioma</option>
+                  {languageOptions.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="pub-form-group">
+                <label htmlFor="level">Nivel</label>
+                <select
+                  id="level"
+                  name="level"
+                  value={formData.level}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="">Seleccionar nivel</option>
+                  {levelOptions.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {error && <div className="pub-error-message">{error}</div>}
+
+              <div className="pub-buttons">
+                <button 
+                  type="submit" 
+                  className="pub-submit-button"
+                  disabled={loading}
+                >
+                  {loading ? 'Publicando...' : 'Publicar'}
+                </button>
+                <button 
+                  type="button" 
+                  className="pub-cancel-button"
+                  onClick={handleCancel}
+                  disabled={loading}
+                >
+                  Cancelar
+                </button>
               </div>
             </div>
 
-            <div className="pub-form-group">
-              <label htmlFor="title">Título</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                required
-                placeholder="Ingresa el título"
-              />
-            </div>
-
-            <div className="pub-form-group">
-              <label htmlFor="subtitle">Subtítulo</label>
-              <input
-                type="text"
-                id="subtitle"
-                name="subtitle"
-                value={formData.subtitle}
-                onChange={handleInputChange}
-                placeholder="Ingresa el subtítulo"
-              />
-            </div>
-
-            <div className="pub-form-group">
-              <label htmlFor="language">Idioma</label>
-              <select
-                id="language"
-                name="language"
-                value={formData.language}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="">Seleccionar idioma</option>
-                {languageOptions.map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="pub-form-group">
-              <label htmlFor="level">Nivel</label>
-              <select
-                id="level"
-                name="level"
-                value={formData.level}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="">Seleccionar nivel</option>
-                {levelOptions.map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {error && <div className="pub-error-message">{error}</div>}
-
-            <div className="pub-buttons">
-              <button 
-                type="submit" 
-                className="pub-submit-button"
-                disabled={loading}
-              >
-                {loading ? 'Publicando...' : 'Publicar'}
-              </button>
-              <button 
-                type="button" 
-                className="pub-cancel-button"
-                onClick={handleCancel}
-                disabled={loading}
-              >
-                Cancelar
-              </button>
+            {/* Columna Derecha */}
+            <div className="pub-right-column">
+              <div className="pub-form-group">
+                <label htmlFor="content">Contenido</label>
+                <textarea
+                  id="content"
+                  name="content"
+                  value={formData.content}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Escribe aquí el contenido principal..."
+                />
+              </div>
             </div>
           </div>
-
-          {/* Columna Derecha */}
-          <div className="pub-right-column">
-            <div className="pub-form-group">
-              <label htmlFor="content">Contenido</label>
-              <textarea
-                id="content"
-                name="content"
-                value={formData.content}
-                onChange={handleInputChange}
-                required
-                placeholder="Escribe aquí el contenido principal..."
-              />
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
