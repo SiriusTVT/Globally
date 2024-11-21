@@ -69,18 +69,25 @@ const PostForm = () => {
     setLoading(true);
     setError('');
 
+    const currentUserId = userId(); // Obtener el userId correctamente
 
-
-    if (!isAuthenticated || !userId) {
-      console.log('Error de autenticación:', { isAuthenticated, userId });
+    if (!isAuthenticated || !currentUserId) {
+      console.log('Error de autenticación:', { isAuthenticated, currentUserId });
       setError('Usuario no autenticado');
       setLoading(false);
       navigate('/login');
       return;
     }
 
+    // Verificar que todos los campos requeridos estén presentes
+    if (!formData.title || !formData.content || !formData.language || !formData.level) {
+      setError('Por favor, complete todos los campos requeridos');
+      setLoading(false);
+      return;
+    }
+
     try {
-      console.log('Iniciando envío de publicación con userId:', userId);
+      console.log('Iniciando envío de publicación con userId:', currentUserId);
       
       const postData = new FormData();
       postData.append('title', formData.title);
@@ -88,7 +95,7 @@ const PostForm = () => {
       postData.append('content', formData.content);
       postData.append('language', formData.language);
       postData.append('level', formData.level);
-      postData.append('userId', userId);
+      postData.append('userId', currentUserId); // Usar el userId correcto
       
       if (formData.image) {
         postData.append('image', formData.image);
@@ -101,7 +108,7 @@ const PostForm = () => {
         content: formData.content.substring(0, 50) + '...', // Solo mostrar inicio del contenido
         language: formData.language,
         level: formData.level,
-        userId: userId,
+        userId: currentUserId,
         hasImage: !!formData.image
       });
 

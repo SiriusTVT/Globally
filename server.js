@@ -170,6 +170,39 @@ app.post('/api/profile-setup', upload.single('profilePicture'), async (req, res)
   }
 });
 
+// Ruta para crear una nueva publicación
+app.post('/api/posts/create', upload.single('image'), async (req, res) => {
+  try {
+    const { title, subtitle, content, language, level, userId } = req.body;
+    const imagePath = req.file ? req.file.path : null;
+
+    // Verificar que todos los campos requeridos estén presentes
+    if (!title || !content || !language || !level || !userId) {
+      return res.status(400).json({ error: 'Faltan campos requeridos' });
+    }
+
+    const newPost = new Post({
+      userId,
+      title,
+      subtitle,
+      content,
+      language,
+      level,
+      imagePath
+    });
+
+    await newPost.save();
+
+    res.status(201).json({
+      message: 'Publicación creada exitosamente',
+      post: newPost
+    });
+  } catch (error) {
+    console.error('Error al crear la publicación:', error);
+    res.status(500).json({ error: 'Error al crear la publicación' });
+  }
+});
+
 // Ruta catch-all para SPA
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist', '../index.html'));
