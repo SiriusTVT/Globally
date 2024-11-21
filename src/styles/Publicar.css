@@ -1,144 +1,196 @@
-/* PostForm.css */
+/* Contenedor principal */
 .pub-form-container {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-color: #f5f5f5;
-  }
+  position: fixed; /* Fija el contenedor en la ventana */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Deshabilita el scroll solo para este contenedor */
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Layout de dos columnas */
+.pub-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  height: 100%;
+
+}
+
+/* Columnas */
+.pub-left-column {
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.pub-right-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Grupos de formulario */
+.pub-form-group {
+  margin-bottom: 1.5rem;
   
-  .pub-layout {
-    display: flex;
-    height: 100%;
-    padding: 20px;
-    gap: 20px;
-  }
+}
+
+/* Para el grupo del contenido específicamente */
+.pub-right-column .pub-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  height: 100%;
   
-  /* Columna Izquierda */
-  .pub-left-column {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Columna Derecha */
-  .pub-right-column {
-    width: 75%;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pub-form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .pub-form-group label {
-    font-weight: 600;
-    color: #333;
-    font-size: 0.9rem;
-  }
-  
-  .pub-form-group input[type="text"],
-  .pub-form-group select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .pub-form-group textarea {
-    height: calc(100vh - 80px);
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    resize: none;
-    line-height: 1.6;
-  }
-  
-  .pub-image-upload-area {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    border: 2px dashed #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fafafa;
-  }
-  
-  .pub-image-placeholder {
-    color: #666;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .pub-file-input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+}
+
+.pub-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* Estilos de inputs */
+.pub-form-group input[type="text"],
+.pub-form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  border: 4px solid var(--primary-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+.pub-form-group input[type="text"]:focus,
+.pub-form-group select:focus,
+.pub-form-group textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  color: var(--text-primary);
+}
+
+/* Área de textarea */
+.pub-form-group textarea {
+  flex: 1;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 4px solid var(--primary-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  resize: none; /* Deshabilita el resize */
+  height: 100%; /* Ocupa todo el espacio disponible */
+}
+
+/* Área de upload de imagen */
+.pub-image-upload-area {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  border: 2px dashed var(--text-secondary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pub-image-upload-area:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(99, 102, 241, 0.05);  
+}
+
+.pub-image-placeholder {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.pub-file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pub-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botones */
+.pub-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pub-submit-button,
+.pub-cancel-button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pub-submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.pub-submit-button:hover {
+  background-color: #4338CA;
+  transform: translateY(-1px);
+}
+
+.pub-cancel-button {
+  background-color: transparent;
+  border: 1.5px solid var(--text-secondary);
+  color: var(--text-secondary);
+}
+
+.pub-cancel-button:hover {
+  background-color: #f9fafb;
+  border-color: var(--text-secondary);
+  transform: translateY(-1px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    cursor: pointer;
+    transform: translateY(10px);
   }
-  
-  .pub-image-preview {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .pub-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: auto;
-  }
-  
-  .pub-submit-button,
-  .pub-cancel-button {
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .pub-submit-button {
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  .pub-submit-button:hover {
-    background-color: #34495e;
-  }
-  
-  .pub-cancel-button {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .pub-cancel-button:hover {
-    background-color: #c0392b;
-  }
-  
-  /* Estilos para elementos focuseados */
-  .pub-form-group input:focus,
-  .pub-form-group select:focus,
-  .pub-form-group textarea:focus {
-    outline: none;
-    border-color: #2c3e50;
-    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
-  }
-  
+}
+
+.pub-form-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos para estados de error */
+.pub-form-group input:invalid,
+.pub-form-group select:invalid,
+.pub-form-group textarea:invalid {
+  border-color: var(--error-color);
+}
