@@ -1,8 +1,8 @@
-// PostForm.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import '../styles/Publicar.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const languageOptions = [
   { value: 'es', label: 'Español' },
@@ -23,6 +23,17 @@ const levelOptions = [
 const PostForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  
+  // Verificar autenticación al cargar el componente
+  useEffect(() => {
+    if (!isAuthenticated || !userId) {
+      console.log('Estado de autenticación:', { isAuthenticated, userId });
+      navigate('/login');
+    }
+  }, [navigate]);
+
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
@@ -52,17 +63,81 @@ const PostForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch({
-      type: 'CREATE_POST',
-      payload: formData
-    });
+    setLoading(true);
+    setError('');
+
+
+
+    if (!isAuthenticated || !userId) {
+      console.log('Error de autenticación:', { isAuthenticated, userId });
+      setError('Usuario no autenticado');
+      setLoading(false);
+      navigate('/login');
+      return;
+    }
+
+    try {
+      console.log('Iniciando envío de publicación con userId:', userId);
+      
+      const postData = new FormData();
+      postData.append('title', formData.title);
+      postData.append('subtitle', formData.subtitle);
+      postData.append('content', formData.content);
+      postData.append('language', formData.language);
+      postData.append('level', formData.level);
+      postData.append('userId', userId);
+      
+      if (formData.image) {
+        postData.append('image', formData.image);
+      }
+
+      // Log para verificar los datos antes de enviar
+      console.log('Datos a enviar:', {
+        title: formData.title,
+        subtitle: formData.subtitle,
+        content: formData.content.substring(0, 50) + '...', // Solo mostrar inicio del contenido
+        language: formData.language,
+        level: formData.level,
+        userId: userId,
+        hasImage: !!formData.image
+      });
+
+      const response = await axios.post('/api/posts/create', postData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log('Respuesta del servidor:', response.data);
+
+      dispatch({
+        type: 'CREATE_POST_SUCCESS',
+        payload: response.data
+      });
+
+      navigate('/mainpage');
+    } catch (err) {
+      console.error('Error detallado al crear la publicación:', err);
+      console.error('Respuesta del servidor:', err.response?.data);
+      
+      if (err.message === 'Usuario no autenticado') {
+        navigate('/login');
+      }
+      
+      setError(
+        err.response?.data?.error || 
+        err.message || 
+        'Error al crear la publicación'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCancel = () => {
     navigate('/mainpage');
-    console.log('Cancelando publicación');
   };
 
   return (
@@ -157,14 +232,21 @@ const PostForm = () => {
               </select>
             </div>
 
+            {error && <div className="pub-error-message">{error}</div>}
+
             <div className="pub-buttons">
-              <button type="submit" className="pub-submit-button">
-                Publicar
+              <button 
+                type="submit" 
+                className="pub-submit-button"
+                disabled={loading}
+              >
+                {loading ? 'Publicando...' : 'Publicar'}
               </button>
               <button 
                 type="button" 
                 className="pub-cancel-button"
                 onClick={handleCancel}
+                disabled={loading}
               >
                 Cancelar
               </button>

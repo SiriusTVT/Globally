@@ -8,6 +8,7 @@ import User from './models/User.js';
 import dotenv from 'dotenv';
 import multer from 'multer';
 import fs from 'fs';
+import Post from './models/Post.js';
 
 // Configuración inicial
 const app = express();
@@ -88,14 +89,22 @@ app.post('/api/login', async (req, res) => {
         error: 'No se encontró una cuenta con el correo asociado' 
       });
     }
+    
     if (user.password !== password) {
       return res.status(400).json({ 
         error: 'Correo o contraseña incorrectos' 
       });
     }
+
+    // Asegurarse de enviar el userId como string
     res.status(200).json({ 
       message: 'Inicio de sesión exitoso',
-      userId: user._id,
+      userId: user._id.toString(),
+      nombre: user.nombre
+    });
+    
+    console.log('Usuario autenticado:', {
+      userId: user._id.toString(),
       nombre: user.nombre
     });
   } catch (error) {
@@ -159,6 +168,34 @@ app.post('/api/profile-setup', upload.single('profilePicture'), async (req, res)
     res.status(500).json({ error: 'Error al actualizar el perfil' });
   }
 });
+
+// Ruta para crear posts
+app.post('/api/posts/create', upload.single('image'), async (req, res) => {
+  try {
+    const { title, subtitle, content, language, level, userId } = req.body;
+    
+    const post = new Post({
+      userId,
+      title,
+      subtitle,
+      content,
+      language,
+      level,
+      imagePath: req.file ? `/uploads/${req.file.filename}` : null
+    });
+
+    await post.save();
+
+    res.status(201).json({
+      message: 'Post creado exitosamente',
+      post
+    });
+  } catch (error) {
+    console.error('Error al crear el post:', error);
+    res.status(500).json({ error: 'Error al crear el post' });
+  }
+});
+
 
 // Ruta catch-all para SPA
 app.get('*', (req, res) => {

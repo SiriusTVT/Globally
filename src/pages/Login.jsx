@@ -25,7 +25,20 @@ function Login() {
         event.preventDefault();
         try {
             const response = await axios.post('/api/login', formData);
+            
             if (response.status === 200) {
+                // Guardar la información del usuario en localStorage
+                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('userName', response.data.nombre);
+                localStorage.setItem('isAuthenticated', 'true');
+                
+                // Log para verificar que se guardó correctamente
+                console.log('Datos de autenticación guardados:', {
+                    userId: response.data.userId,
+                    nombre: response.data.nombre,
+                    isAuthenticated: true
+                });
+
                 navigate('/mainpage');
             }
         } catch (error) {
@@ -37,6 +50,14 @@ function Login() {
     const handleBack = () => {
         navigate('/');
     };
+
+    // Verificar si ya hay una sesión activa al cargar el componente
+    useEffect(() => {
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+        if (isAuthenticated) {
+            navigate('/mainpage');
+        }
+    }, [navigate]);
 
     return (
         <div className="login-page-container">
